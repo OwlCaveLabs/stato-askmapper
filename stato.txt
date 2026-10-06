@@ -1,0 +1,87 @@
+AskMapper, stato dei lavori. Aggiornato 6 ottobre 2026. App di prova: 1.2.24 (canali di prova interni: Google Play e App Store).
+25 voci in tutto: Fatto 6 · In lavorazione 1 · In coda 17 · Aspetta una tua risposta 1.
+
+ASPETTA UNA TUA RISPOSTA
+- voce 14: Scheda versione 2: le nuove domande. Ti ho scritto il 6 ottobre con la proposta e i quattro nomi dei campi per la tua pagina. Mi servono due conferme: se "Accessibile con il tuo ausilio?" riguarda l'ingresso o il locale intero, e se "Che ausilio?" è obbligatoria solo per chi risponde alla prima. Poi pubblico la scheda nuova.
+
+VERSIONI DI PROVA
+Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
+Google Play: Prova interna [x] (1.2.24, dal 5 ottobre) -> Beta [x] (1.2.24, dal 6 ottobre) https://play.google.com/apps/testing/com.owlcavelabs.askmapper -> Sullo store [x] (1.2.11)
+App Store: Prova interna [x] (1.2.24, dal 5 ottobre) -> Beta [~] (in revisione: 1.2.24, dal 6 ottobre) https://testflight.apple.com/join/DX47yr3t -> Sullo store [x] (1.2.11)
+
+IL PIANO
+I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le voci della bozza del mese 3, da rivedere insieme alla fine del mese 2. Ogni numero è una voce qui sotto, col colore del suo stato.
+[~] A. Ricerca sulla mappa - 4 di 5 fatte - voce 2, voce 3, voce 4, voce 5, voce 6
+[~] C1. Chi sta mappando - 0 di 1 fatte - voce 7
+[ ] B. Foto sulla scheda del luogo - 0 di 1 fatte - voce 10
+[ ] C2. Risposte tracciate e disaccordi - 0 di 2 fatte - voce 8, voce 9
+[~] Pagina gestori e questionario - 1 di 4 fatte - voce 11, voce 12, voce 13, voce 14
+[ ] D. Lotto AccessiBO - 0 di 1 fatte - voce 15
+[ ] E. Strumenti per il giro sul campo - 0 di 1 fatte - voce 16
+[ ] F. Vista a lista e lettori vocali - 0 di 2 fatte - voce 17, voce 18
+[ ] Mese 3, bozza da rivedere - 0 di 7 fatte - voce 19, voce 20, voce 21, voce 22, voce 23, voce 24, voce 25
+
+NOVITÀ, DALLA PIÙ RECENTE
+6 ottobre
+- La versione 1.2.24 è sulla Beta: su Android si installa subito dal link, su iPhone appena Apple finisce di esaminarla.
+- Ti ho mandato la proposta della scheda versione 2, con i quattro nomi dei campi per la tua pagina e due conferme da darmi. (voce 14)
+- Il selettore di chi sta mappando è in prova sulla versione di sviluppo. (voce 7)
+
+5 ottobre
+- Nuova versione di prova 1.2.24: "Cerca come indirizzo" resta sempre in vista sotto la lista dei risultati. (voce 5)
+
+MESE 1
+(Fatto 1)
+1. Mese 1: i luoghi di Bologna sulla mappa e la scheda di accessibilità [Fatto] Quasi 7.900 luoghi di Bologna sulla mappa come pin grigi da mappare, la scheda del luogo, il questionario in tre sezioni e la mappatura a più mani. Prima versione di prova il 21 luglio.
+
+RICERCA SULLA MAPPA
+(Fatto 4 · In coda 1)
+2. Cercare un luogo o un indirizzo dalla mappa [Fatto] La lente accanto al pulsante principale cerca fra i luoghi per nome e, con "Cerca come indirizzo", per via. Sulle versioni di prova dal 2 settembre (1.2.22).
+3. "Fai una Domanda" e "Segnala o Consiglia": il punto cade sull'indirizzo cercato [Fatto] issue #163. Cercando un indirizzo mentre si crea una domanda o una segnalazione, il punto finiva qualche decina di metri più in basso e lo zoom era sempre lo stesso. Ora il punto cade sull'indirizzo e lo zoom segue il risultato: una via da vicino, una città da lontano. Dalla versione 1.2.23.
+4. Esplora: la mappa si centra sulla via cercata [Fatto] issue #164. Cercando "Via del Pratello" la mappa si fermava sulla via accanto. Ora inquadra tutta la via cercata e la segna con un anello. Dalla versione 1.2.23.
+5. "Cerca come indirizzo" sempre in vista [Fatto] issue #179. Segnalata da te: cercando "Bologna" la riga finiva in fondo a una lunga lista di locali. Ora sta fissa sotto la lista, anche quando i risultati sono tanti. Dalla versione 1.2.24.
+6. La X della ricerca chiude invece di cancellare [In coda] issue #178. Dopo un passaggio da "Fai una Domanda" o "Segnala o Consiglia", riaprendo la ricerca il campo mostra ancora la ricerca di prima, e la X chiude la ricerca invece di cancellarlo. Si aggira toccando di nuovo la lente.
+
+CHI STA MAPPANDO
+(In lavorazione 1 · In coda 2)
+7. Compilando la scheda si dice se si è un utente o il gestore [In lavorazione] issue #172. All'inizio della scheda si sceglie se si risponde come utente o come gestore del locale, e la scheda mostra la veste di chi ha risposto. In prova sulla versione di sviluppo, arriva con la prossima versione di prova.
+8. Ogni risposta con il suo autore, e i disaccordi visibili [In coda] issue #173. Oggi su ogni domanda vale l'ultima risposta data. Con questo lavoro ogni risposta resta legata a chi l'ha data e quando, e se due persone dicono cose diverse la scheda le mostra entrambe. Viene prima del lotto AccessiBO.
+9. Misura del gestore ed esperienza dell'utente affiancate [In coda] issue #166. Sulla stessa domanda la scheda mostra la misura dichiarata dal gestore e l'esperienza di chi c'è stato, ognuna con autore e data.
+
+FOTO
+(In coda 1)
+10. Foto sulla scheda del luogo [In coda] issue #171. Mappando un luogo si aggiungono foto scattate sul posto, che compaiono nella scheda con autore e data. Parte dopo il selettore di chi sta mappando.
+
+PAGINA GESTORI E QUESTIONARIO
+(Fatto 1 · In coda 2 · Aspetta una tua risposta 1)
+11. Le schede della tua pagina gestori entrano nell'app [In coda] issue #167. Le schede compilate dai gestori sulla tua pagina compaiono nell'app come mappature del gestore.
+12. Indirizzo confermato dal gestore [In coda] issue #168. Quando il gestore conferma o aggiunge l'indirizzo sulla tua pagina, il luogo nell'app si aggiorna. Il solo indirizzo probabile non cambia mai il luogo.
+13. Porta per carrozzina: niente soglia degli 80 cm [Fatto] issue #169. Deciso da te il 12 settembre: la tua pagina manda solo la larghezza della porta in centimetri, e il sì o no lo dà chi c'è stato.
+14. Scheda versione 2: le nuove domande [Aspetta una tua risposta] issue #165. Ti ho scritto il 6 ottobre con la proposta e i quattro nomi dei campi per la tua pagina. Mi servono due conferme: se "Accessibile con il tuo ausilio?" riguarda l'ingresso o il locale intero, e se "Che ausilio?" è obbligatoria solo per chi risponde alla prima. Poi pubblico la scheda nuova.
+
+LOTTO ACCESSIBO
+(In coda 1)
+15. I 448 luoghi AccessiBO sulla mappa [In coda] issue #170. I luoghi rilevati da AccessiBO compaiono come schede blu attribuite all'associazione, con la data del rilievo. Parte dopo le risposte tracciate (voce 8), così il rilievo AccessiBO e la scheda del gestore sullo stesso luogo restano distinguibili.
+
+GIRO SUL CAMPO
+(In coda 1)
+16. "I miei luoghi" nel menu [In coda] issue #174. Dal proprio menu si rivedono i luoghi mappati, per correggerli la sera dopo una giornata di rilievi.
+
+VISTA A LISTA E LETTORI VOCALI
+(In coda 2)
+17. Vista a lista dei luoghi [In coda] issue #175. I luoghi anche come lista ordinata per distanza, in alternativa alla mappa: per chi usa un lettore vocale una mappa di pin è difficile da usare.
+18. Collaudo con TalkBack e VoiceOver [In coda] issue #176. Prova con i lettori vocali di Android e iPhone su tutte le schermate, comprese quelle nuove del mese 2.
+
+MESE 3, BOZZA
+(In coda 7)
+19. Ambassador: verifica delle schede e pin verde [In coda] Ruolo e badge sul profilo, verifica delle schede con passaggio a verde, inviti con catena di fiducia, nuove regole punti. Per collaudarlo con persone vere servono i nomi dei 5 ambassador iniziali di Bologna.
+20. Coda dei disaccordi [In coda] L'elenco dei disaccordi aperti che l'ambassador scorre e chiude scegliendo il valore giusto. Si appoggia sulle risposte tracciate (voce 8).
+21. Foto, seconda parte [In coda] Moderazione delle foto e foto legate alla singola domanda. L'import delle 705 foto storiche di AccessiBO entra qui se l'accesso al Drive non arriva in tempo per il mese 2.
+22. Mappe di sfondo con termini adatti al test pubblico [In coda] La mappa principale usa già il nuovo fornitore. Restano da spostare le mappine dentro le schede di domande e consigli, prima del test pubblico.
+23. Pin di criticità [In coda] Segnalazioni temporanee legate a un punto della mappa, con un triangolo rosso, scadenza dopo 7 giorni e voti degli altri utenti per confermarle o smentirle.
+24. Chatbot e passaggio della domanda all'ambassador [In coda] Un assistente che risponde leggendo le schede dei luoghi, e la domanda passa all'ambassador se dopo 60 minuti nessuno ha risposto. È la prima candidata a uscire dal mese 3 se il lavoro non ci sta.
+25. Rifinitura verso il lancio [In coda] Accoglienza dei nuovi utenti, numeri di base sulla mappatura, limiti configurabili, verifica finale di accessibilità e correzioni.
+
+COME SEGNALARE
+Per un problema nell'app scrivimi dove eri, cosa hai fatto e cosa ti aspettavi; lo screenshot solo quando le parole non bastano. Se il problema riguarda una voce di questa pagina, cita il suo numero. Per le voci in "Aspetta una tua risposta" basta rispondere all'email in cui te l'ho chiesto.
+

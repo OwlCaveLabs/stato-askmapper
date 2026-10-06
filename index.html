@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AskMapper, stato dei lavori</title>
+<style>
+:root { --testo: #1e1e1e; --muto: #666; --linea: #e3e3e3; --sfondo: #fafafa; --carta: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--sfondo); color: var(--testo);
+  font: 16px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+main { max-width: 860px; margin: 0 auto; padding: 20px 16px 60px; }
+h1 { font-size: 1.6rem; margin: 0 0 4px; }
+h2 { font-size: 1.15rem; margin: 32px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--linea); }
+.sotto { color: var(--muto); margin: 0 0 18px; }
+.riquadro { background: var(--carta); border: 1px solid var(--linea); border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
+.riquadro h3 { margin: 0 0 8px; font-size: 1rem; }
+.riquadro ul { margin: 0; padding-left: 20px; }
+.riquadro li { margin: 4px 0; }
+.legenda { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; }
+.chip { display: inline-block; font-size: 0.78rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.chip .n { font-variant-numeric: tabular-nums; opacity: 0.72; margin-left: 4px; }
+.chip.tutte { color: #4a4a4a; background: #ececec; }
+/* Il filtro non usa script: i radio restano nella pagina, invisibili ma
+   raggiungibili da tastiera, e le pillole sono le loro <label>. */
+.rb { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.chip.filtro { cursor: pointer; user-select: none; }
+.chip.filtro:hover { box-shadow: inset 0 0 0 1px currentColor; }
+.aiuto-filtro { color: var(--muto); font-size: 0.82rem; margin: 8px 0 0; }
+.tag-area { font-weight: 400; }
+.tag-area .chip { font-size: 0.7rem; padding: 1px 7px; margin-left: 5px; vertical-align: 2px; }
+.voce { display: grid; grid-template-columns: 2.6em 1fr; gap: 6px 10px; padding: 10px 0; border-bottom: 1px solid var(--linea); }
+.voce:last-child { border-bottom: 0; }
+.num { color: var(--muto); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.titolo { font-weight: 600; }
+.meta { color: var(--muto); font-size: 0.9rem; margin-top: 2px; }
+.nota { font-size: 0.93rem; margin-top: 4px; }
+.dettaglio { font-size: 0.93rem; margin-top: 4px; }
+.dettaglio summary { cursor: pointer; color: var(--muto); font-size: 0.85rem; list-style: none;
+  display: inline-block; padding: 2px 0; user-select: none; }
+.dettaglio summary::-webkit-details-marker { display: none; }
+.dettaglio summary::before { content: "Di più \25BE"; }
+.dettaglio[open] summary::before { content: "Di meno \25B4"; }
+.dettaglio summary:hover { color: var(--testo); }
+.dettaglio p { margin: 4px 0 0; }
+.ripiegata .nota { margin-top: 2px; }
+.novita .giorno { font-weight: 600; margin: 18px 0 6px; }
+.novita ul { margin: 0; padding-left: 20px; }
+.novita li { margin: 6px 0; font-size: 0.93rem; }
+.novita .voce-link { vertical-align: 1px; }
+.precedenti summary { cursor: pointer; font-weight: 600; margin-top: 22px; }
+.precedenti .giorno { color: var(--muto); }
+
+/* Versioni di prova e piano */
+.store { padding: 16px; }
+.barra-riga { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.barra { flex: 1 1 120px; height: 14px; border-radius: 999px; background: #ececec; }
+.barra-piena { height: 100%; border-radius: 999px; background: #2e8b57; }
+.barra-testo { font-size: 1.15rem; font-weight: 700; white-space: nowrap; }
+.corsia { margin-top: 18px; }
+.corsia-nome { font-weight: 600; font-size: 0.95rem; margin-bottom: 8px; }
+.gradini { display: flex; align-items: flex-start; }
+.gradino { flex: 0 1 auto; text-align: center; min-width: 0; }
+.giunto { flex: 1 1 12px; min-width: 12px; height: 2px; background: #d8d8d8; margin-top: 13px; }
+.pillola { display: inline-block; font-size: 0.85rem; font-weight: 600; padding: 4px 12px;
+  border-radius: 999px; white-space: nowrap; border: 1px solid transparent; }
+.pillola.fatto { background: #2e8b57; border-color: #2e8b57; color: #fff; }
+.pillola.in_corso { background: #fff7ea; border-color: #e08a1e; color: #9a5a05; }
+.pillola.da_fare { background: #fff; border-color: #d0d0d0; color: var(--muto); }
+.gradino .etichetta { font-size: 0.78rem; color: var(--muto); margin: 4px auto 0; max-width: 200px; }
+.gradino .in-revisione { color: #e08a1e; }
+.gradino .in-attesa { color: #e08a1e; }
+a.pillola { text-decoration: underline; text-underline-offset: 3px; }
+a.pillola:hover { filter: brightness(0.92); }
+.store ul.passi { list-style: none; margin: 20px 0 0; padding: 18px 0 0; border-top: 1px solid var(--linea); }
+.passo { display: grid; grid-template-columns: 20px 1fr; gap: 2px 10px; padding: 8px 0;
+  border-top: 1px solid var(--linea); }
+.passo:first-child { border-top: 0; }
+.segno { grid-row: span 3; display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px; margin-top: 3px; border-radius: 50%; font-size: 11px;
+  font-weight: 700; line-height: 1; }
+.segno.fatto { background: #2e8b57; border: 1px solid #2e8b57; color: #fff; }
+.segno.in_corso { background: linear-gradient(90deg, #e08a1e 50%, #fff 50%); border: 1px solid #e08a1e; }
+.segno.da_fare { background: #fff; border: 1px solid #cfcfcf; }
+.blocco-nota { color: var(--muto); font-size: 0.9rem; margin: 10px 0 0; }
+.passo-titolo { font-weight: 600; }
+.passo-conteggio { color: var(--muto); font-size: 0.85rem; font-weight: 400; white-space: nowrap; }
+.passo-voci { margin-top: 4px; }
+.voce-link { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 1px 8px;
+  border-radius: 999px; border: 1px solid var(--linea); background: #f3f3f3; color: #4a4a4a;
+  text-decoration: none; margin: 2px 4px 0 0; }
+.salta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -6px 0 8px; }
+.salta span { color: var(--muto); font-size: 0.85rem; margin-right: 2px; }
+.salta a { font-size: 0.85rem; padding: 3px 12px; border-radius: 999px; border: 1px solid var(--linea);
+  background: var(--carta); color: var(--testo); text-decoration: none; }
+.salta a:hover { border-color: #1a412e; color: #1a412e; }
+h2[id], .area[id] { scroll-margin-top: 12px; }
+.salta summary { font-size: 0.85rem; padding: 3px 12px; border-radius: 999px; border: 1px solid var(--linea);
+  background: var(--carta); cursor: pointer; list-style: none; }
+.salta summary::-webkit-details-marker { display: none; }
+.salta summary::after { content: " ▾"; color: var(--muto); }
+.salta details[open] { flex-basis: 100%; }
+.salta details[open] summary { display: inline-block; border-color: #1a412e; color: #1a412e; }
+.salta details[open] summary::after { content: " ▴"; }
+.salta details div { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; padding: 10px;
+  background: var(--carta); border: 1px solid var(--linea); border-radius: 10px; }
+/* Aspetta una tua risposta */
+.attesa { border-left: 4px solid #5b3a8c; }
+.attesa ul { list-style: none; padding-left: 0; }
+.attesa li { margin: 8px 0; }
+.attesa .voce-link { margin-right: 8px; }
+/* Il piano: una barra sottile per blocco */
+.store ul.blocchi { margin-top: 12px; padding-top: 4px; }
+.barra.piccola { display: block; height: 6px; margin: 6px 0 2px; }
+.barra.piccola .barra-piena { display: block; }
+.segnalare p { margin: 0; }
+/* Torna in cima: fuori da <main>, per non entrare nei selettori `~` del filtro.
+   Compare solo dopo un po' di scorrimento (classe messa dallo script). */
+.su { position: fixed; right: 16px; bottom: 16px; width: 44px; height: 44px;
+  border-radius: 50%; background: #1a412e; color: #fff; display: flex;
+  align-items: center; justify-content: center; text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25); opacity: 0; visibility: hidden;
+  transform: translateY(8px); transition: opacity .2s, transform .2s, visibility .2s; }
+.su.visibile { opacity: 1; visibility: visible; transform: none; }
+.su svg { width: 22px; height: 22px; }
+
+@media (max-width: 480px) { body { font-size: 15px; } main { padding: 14px 12px 50px; } }
+@media (max-width: 480px) {
+  .gradini { flex-direction: column; align-items: flex-start; }
+  .gradino { text-align: left; }
+  .giunto { flex: 0 0 auto; width: 2px; min-width: 0; height: 14px; margin: 3px 0 3px 20px; }
+  .barra-testo { font-size: 1.05rem; }
+}
+
+/* Filtro per stato */
+#f-tutte:checked ~ .legenda label[for="f-tutte"] { box-shadow: inset 0 0 0 2px currentColor; }
+#f-tutte:focus-visible ~ .legenda label[for="f-tutte"] { outline: 2px solid var(--testo); outline-offset: 2px; }
+#f-fatto:checked ~ .legenda label[for="f-fatto"] { box-shadow: inset 0 0 0 2px currentColor; }
+#f-fatto:focus-visible ~ .legenda label[for="f-fatto"] { outline: 2px solid var(--testo); outline-offset: 2px; }
+#f-in_lavorazione:checked ~ .legenda label[for="f-in_lavorazione"] { box-shadow: inset 0 0 0 2px currentColor; }
+#f-in_lavorazione:focus-visible ~ .legenda label[for="f-in_lavorazione"] { outline: 2px solid var(--testo); outline-offset: 2px; }
+#f-in_coda:checked ~ .legenda label[for="f-in_coda"] { box-shadow: inset 0 0 0 2px currentColor; }
+#f-in_coda:focus-visible ~ .legenda label[for="f-in_coda"] { outline: 2px solid var(--testo); outline-offset: 2px; }
+#f-da_decidere:checked ~ .legenda label[for="f-da_decidere"] { box-shadow: inset 0 0 0 2px currentColor; }
+#f-da_decidere:focus-visible ~ .legenda label[for="f-da_decidere"] { outline: 2px solid var(--testo); outline-offset: 2px; }
+#f-dopo_il_lancio:checked ~ .legenda label[for="f-dopo_il_lancio"] { box-shadow: inset 0 0 0 2px currentColor; }
+#f-dopo_il_lancio:focus-visible ~ .legenda label[for="f-dopo_il_lancio"] { outline: 2px solid var(--testo); outline-offset: 2px; }
+#f-fatto:checked ~ .area:not(.ha-fatto) { display: none; }
+#f-fatto:checked ~ .area .voce:not(.s-fatto) { display: none; }
+#f-in_lavorazione:checked ~ .area:not(.ha-in_lavorazione) { display: none; }
+#f-in_lavorazione:checked ~ .area .voce:not(.s-in_lavorazione) { display: none; }
+#f-in_coda:checked ~ .area:not(.ha-in_coda) { display: none; }
+#f-in_coda:checked ~ .area .voce:not(.s-in_coda) { display: none; }
+#f-da_decidere:checked ~ .area:not(.ha-da_decidere) { display: none; }
+#f-da_decidere:checked ~ .area .voce:not(.s-da_decidere) { display: none; }
+#f-dopo_il_lancio:checked ~ .area:not(.ha-dopo_il_lancio) { display: none; }
+#f-dopo_il_lancio:checked ~ .area .voce:not(.s-dopo_il_lancio) { display: none; }
+@supports selector(:has(*)) {
+  .voce:target { display: grid !important; }
+  .area:has(.voce:target) { display: block !important; }
+}
+</style>
+</head>
+<body>
+<main>
+<input class="rb" type="radio" name="filtro" id="f-tutte" checked>
+<input class="rb" type="radio" name="filtro" id="f-fatto">
+<input class="rb" type="radio" name="filtro" id="f-in_lavorazione">
+<input class="rb" type="radio" name="filtro" id="f-in_coda">
+<input class="rb" type="radio" name="filtro" id="f-da_decidere">
+<input class="rb" type="radio" name="filtro" id="f-dopo_il_lancio">
+<h1>AskMapper, stato dei lavori</h1>
+<p class="sotto">Aggiornato 6 ottobre 2026. App di prova: 1.2.24 (canali di prova interni: Google Play e App Store).</p>
+<nav class="salta"><span>Vai a</span><a href="#attesa">Aspetta una tua risposta</a><a href="#canali">Versioni di prova</a><a href="#piano">Il piano</a><a href="#novita">Novità</a><a href="#voci">Le voci</a><details class="aree"><summary>Aree delle voci</summary><div><a href="#area-mese-1">Mese 1</a><a href="#area-ricerca-sulla-mappa">Ricerca sulla mappa</a><a href="#area-chi-sta-mappando">Chi sta mappando</a><a href="#area-foto">Foto</a><a href="#area-pagina-gestori-e-questionario">Pagina gestori e questionario</a><a href="#area-lotto-accessibo">Lotto AccessiBO</a><a href="#area-giro-sul-campo">Giro sul campo</a><a href="#area-vista-a-lista-e-lettori-vocali">Vista a lista e lettori vocali</a><a href="#area-mese-3-bozza">Mese 3, bozza</a></div></details></nav>
+<h2 id="attesa">Aspetta una tua risposta</h2>
+<div class="riquadro attesa"><ul>
+<li><a class="voce-link" href="#voce-14" style="color:#5b3a8c;background:#f1eafb;border-color:#5b3a8c">voce 14</a><span class="titolo">Scheda versione 2: le nuove domande</span><div class="nota">Ti ho scritto il 6 ottobre con la proposta e i quattro nomi dei campi per la tua pagina. Mi servono due conferme: se &quot;Accessibile con il tuo ausilio?&quot; riguarda l&#x27;ingresso o il locale intero, e se &quot;Che ausilio?&quot; è obbligatoria solo per chi risponde alla prima. Poi pubblico la scheda nuova.</div></li>
+</ul></div>
+<h2 id="canali">Versioni di prova</h2>
+<div class="riquadro store">
+<p class="blocco-nota">Le versioni dell&#x27;app che si possono installare oggi, su Android e su iPhone. &quot;Prova interna&quot; è la versione più recente, riservata ai tester invitati. &quot;Beta&quot; si installa da chiunque abbia il link: tocca la pillola &quot;Beta&quot;. Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. &quot;Sullo store&quot; è la versione che scarica chiunque.</p>
+<div class="corsia">
+<div class="corsia-nome">Google Play</div>
+<div class="gradini">
+<div class="gradino">
+<div><span class="pillola fatto">Prova interna</span></div>
+<div class="etichetta">1.2.24, dal 5 ottobre</div>
+</div>
+<div class="giunto"></div>
+<div class="gradino">
+<div><a class="pillola fatto" href="https://play.google.com/apps/testing/com.owlcavelabs.askmapper" target="_blank" rel="noopener">Beta</a></div>
+<div class="etichetta">1.2.24, dal 6 ottobre</div>
+</div>
+<div class="giunto"></div>
+<div class="gradino">
+<div><span class="pillola fatto">Sullo store</span></div>
+<div class="etichetta">1.2.11</div>
+</div>
+</div></div>
+<div class="corsia">
+<div class="corsia-nome">App Store</div>
+<div class="gradini">
+<div class="gradino">
+<div><span class="pillola fatto">Prova interna</span></div>
+<div class="etichetta">1.2.24, dal 5 ottobre</div>
+</div>
+<div class="giunto"></div>
+<div class="gradino">
+<div><a class="pillola in_corso" href="https://testflight.apple.com/join/DX47yr3t" target="_blank" rel="noopener">Beta</a></div>
+<div class="etichetta in-revisione">in revisione: 1.2.24, dal 6 ottobre</div>
+</div>
+<div class="giunto"></div>
+<div class="gradino">
+<div><span class="pillola fatto">Sullo store</span></div>
+<div class="etichetta">1.2.11</div>
+</div>
+</div></div>
+</div>
+<h2 id="piano">Il piano</h2>
+<div class="riquadro store">
+<p class="blocco-nota">I blocchi del piano del mese 2, nell&#x27;ordine in cui li sto facendo, e in fondo le voci della bozza del mese 3, da rivedere insieme alla fine del mese 2. Ogni numero è una voce qui sotto, col colore del suo stato.</p>
+<ul class="passi blocchi">
+<li class="passo">
+<span class="segno in_corso"></span>
+<span class="passo-titolo">A. Ricerca sulla mappa <span class="passo-conteggio">4 di 5 fatte</span></span>
+<span class="barra piccola"><span class="barra-piena" style="width:80.0%"></span></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-2" style="color:#1b7f3b;background:#e6f4ea;border-color:#1b7f3b">voce 2</a><a class="voce-link" href="#voce-3" style="color:#1b7f3b;background:#e6f4ea;border-color:#1b7f3b">voce 3</a><a class="voce-link" href="#voce-4" style="color:#1b7f3b;background:#e6f4ea;border-color:#1b7f3b">voce 4</a><a class="voce-link" href="#voce-5" style="color:#1b7f3b;background:#e6f4ea;border-color:#1b7f3b">voce 5</a><a class="voce-link" href="#voce-6" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 6</a></span>
+</li>
+<li class="passo">
+<span class="segno in_corso"></span>
+<span class="passo-titolo">C1. Chi sta mappando <span class="passo-conteggio">0 di 1 fatte</span></span>
+<span class="barra piccola"><span class="barra-piena" style="width:0.0%"></span></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-7" style="color:#a05a00;background:#fff4e0;border-color:#a05a00">voce 7</a></span>
+</li>
+<li class="passo">
+<span class="segno da_fare"></span>
+<span class="passo-titolo">B. Foto sulla scheda del luogo <span class="passo-conteggio">0 di 1 fatte</span></span>
+<span class="barra piccola"><span class="barra-piena" style="width:0.0%"></span></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-10" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 10</a></span>
+</li>
+<li class="passo">
+<span class="segno da_fare"></span>
+<span class="passo-titolo">C2. Risposte tracciate e disaccordi <span class="passo-conteggio">0 di 2 fatte</span></span>
+<span class="barra piccola"><span class="barra-piena" style="width:0.0%"></span></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-8" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 8</a><a class="voce-link" href="#voce-9" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 9</a></span>
+</li>
+<li class="passo">
+<span class="segno in_corso"></span>
+<span class="passo-titolo">Pagina gestori e questionario <span class="passo-conteggio">1 di 4 fatte</span></span>
+<span class="barra piccola"><span class="barra-piena" style="width:25.0%"></span></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-11" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 11</a><a class="voce-link" href="#voce-12" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 12</a><a class="voce-link" href="#voce-13" style="color:#1b7f3b;background:#e6f4ea;border-color:#1b7f3b">voce 13</a><a class="voce-link" href="#voce-14" style="color:#5b3a8c;background:#f1eafb;border-color:#5b3a8c">voce 14</a></span>
+</li>
+<li class="passo">
+<span class="segno da_fare"></span>
+<span class="passo-titolo">D. Lotto AccessiBO <span class="passo-conteggio">0 di 1 fatte</span></span>
+<span class="barra piccola"><span class="barra-piena" style="width:0.0%"></span></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-15" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 15</a></span>
+</li>
+<li class="passo">
+<span class="segno da_fare"></span>
+<span class="passo-titolo">E. Strumenti per il giro sul campo <span class="passo-conteggio">0 di 1 fatte</span></span>
+<span class="barra piccola"><span class="barra-piena" style="width:0.0%"></span></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-16" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 16</a></span>
+</li>
+<li class="passo">
+<span class="segno da_fare"></span>
+<span class="passo-titolo">F. Vista a lista e lettori vocali <span class="passo-conteggio">0 di 2 fatte</span></span>
+<span class="barra piccola"><span class="barra-piena" style="width:0.0%"></span></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-17" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 17</a><a class="voce-link" href="#voce-18" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 18</a></span>
+</li>
+<li class="passo">
+<span class="segno da_fare"></span>
+<span class="passo-titolo">Mese 3, bozza da rivedere <span class="passo-conteggio">0 di 7 fatte</span></span>
+<span class="barra piccola"><span class="barra-piena" style="width:0.0%"></span></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-19" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 19</a><a class="voce-link" href="#voce-20" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 20</a><a class="voce-link" href="#voce-21" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 21</a><a class="voce-link" href="#voce-22" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 22</a><a class="voce-link" href="#voce-23" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 23</a><a class="voce-link" href="#voce-24" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 24</a><a class="voce-link" href="#voce-25" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 25</a></span>
+</li>
+</ul></div>
+<h2 id="novita">Novità, dalla più recente</h2><div class="novita">
+<div class="giorno">6 ottobre</div><ul><li>La versione 1.2.24 è sulla Beta: su Android si installa subito dal link, su iPhone appena Apple finisce di esaminarla. </li><li>Ti ho mandato la proposta della scheda versione 2, con i quattro nomi dei campi per la tua pagina e due conferme da darmi. <a class="voce-link" href="#voce-14" style="color:#5b3a8c;background:#f1eafb;border-color:#5b3a8c">voce 14</a></li><li>Il selettore di chi sta mappando è in prova sulla versione di sviluppo. <a class="voce-link" href="#voce-7" style="color:#a05a00;background:#fff4e0;border-color:#a05a00">voce 7</a></li></ul>
+<div class="giorno">5 ottobre</div><ul><li>Nuova versione di prova 1.2.24: &quot;Cerca come indirizzo&quot; resta sempre in vista sotto la lista dei risultati. <a class="voce-link" href="#voce-5" style="color:#1b7f3b;background:#e6f4ea;border-color:#1b7f3b">voce 5</a></li></ul>
+</div>
+<h2 id="voci">Le voci</h2>
+<div class="legenda"><label class="chip tutte filtro" for="f-tutte">Tutte<span class="n">25</span></label><label class="chip filtro" for="f-fatto" style="color:#1b7f3b;background:#e6f4ea">Fatto<span class="n">6</span></label><label class="chip filtro" for="f-in_lavorazione" style="color:#a05a00;background:#fff4e0">In lavorazione<span class="n">1</span></label><label class="chip filtro" for="f-in_coda" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">17</span></label><label class="chip filtro" for="f-da_decidere" style="color:#5b3a8c;background:#f1eafb">Aspetta una tua risposta<span class="n">1</span></label></div>
+<p class="aiuto-filtro">Tocca un'etichetta qui sopra per vedere solo quelle voci; "Tutte" le rimette in fila.</p>
+<section class="area ha-fatto" id="area-mese-1">
+<h2>Mese 1 <span class="tag-area"><span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto<span class="n">1</span></span></span></h2>
+<div class="voce s-fatto" id="voce-1">
+<div class="num">1</div>
+<div>
+<div class="titolo">Mese 1: i luoghi di Bologna sulla mappa e la scheda di accessibilità <span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto</span></div>
+<details class="dettaglio ripiegata"><summary></summary><div class="nota">Quasi 7.900 luoghi di Bologna sulla mappa come pin grigi da mappare, la scheda del luogo, il questionario in tre sezioni e la mappatura a più mani. Prima versione di prova il 21 luglio.</div></details>
+</div></div>
+</section>
+<section class="area ha-fatto ha-in_coda" id="area-ricerca-sulla-mappa">
+<h2>Ricerca sulla mappa <span class="tag-area"><span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto<span class="n">4</span></span><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">1</span></span></span></h2>
+<div class="voce s-fatto" id="voce-2">
+<div class="num">2</div>
+<div>
+<div class="titolo">Cercare un luogo o un indirizzo dalla mappa <span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto</span></div>
+<details class="dettaglio ripiegata"><summary></summary><div class="nota">La lente accanto al pulsante principale cerca fra i luoghi per nome e, con &quot;Cerca come indirizzo&quot;, per via. Sulle versioni di prova dal 2 settembre (1.2.22).</div></details>
+</div></div>
+<div class="voce s-fatto" id="voce-3">
+<div class="num">3</div>
+<div>
+<div class="titolo">&quot;Fai una Domanda&quot; e &quot;Segnala o Consiglia&quot;: il punto cade sull&#x27;indirizzo cercato <span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto</span></div>
+<div class="meta">issue #163</div>
+<details class="dettaglio ripiegata"><summary></summary><div class="nota">Cercando un indirizzo mentre si crea una domanda o una segnalazione, il punto finiva qualche decina di metri più in basso e lo zoom era sempre lo stesso. Ora il punto cade sull&#x27;indirizzo e lo zoom segue il risultato: una via da vicino, una città da lontano. Dalla versione 1.2.23.</div></details>
+</div></div>
+<div class="voce s-fatto" id="voce-4">
+<div class="num">4</div>
+<div>
+<div class="titolo">Esplora: la mappa si centra sulla via cercata <span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto</span></div>
+<div class="meta">issue #164</div>
+<details class="dettaglio ripiegata"><summary></summary><div class="nota">Cercando &quot;Via del Pratello&quot; la mappa si fermava sulla via accanto. Ora inquadra tutta la via cercata e la segna con un anello. Dalla versione 1.2.23.</div></details>
+</div></div>
+<div class="voce s-fatto" id="voce-5">
+<div class="num">5</div>
+<div>
+<div class="titolo">&quot;Cerca come indirizzo&quot; sempre in vista <span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto</span></div>
+<div class="meta">issue #179</div>
+<details class="dettaglio ripiegata"><summary></summary><div class="nota">Segnalata da te: cercando &quot;Bologna&quot; la riga finiva in fondo a una lunga lista di locali. Ora sta fissa sotto la lista, anche quando i risultati sono tanti. Dalla versione 1.2.24.</div></details>
+</div></div>
+<div class="voce s-in_coda" id="voce-6">
+<div class="num">6</div>
+<div>
+<div class="titolo">La X della ricerca chiude invece di cancellare <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #178</div>
+<div class="nota">Dopo un passaggio da &quot;Fai una Domanda&quot; o &quot;Segnala o Consiglia&quot;, riaprendo la ricerca il campo mostra ancora la ricerca di prima, e la X chiude la ricerca invece di cancellarlo. Si aggira toccando di nuovo la lente.</div>
+</div></div>
+</section>
+<section class="area ha-in_lavorazione ha-in_coda" id="area-chi-sta-mappando">
+<h2>Chi sta mappando <span class="tag-area"><span class="chip" style="color:#a05a00;background:#fff4e0">In lavorazione<span class="n">1</span></span><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">2</span></span></span></h2>
+<div class="voce s-in_lavorazione" id="voce-7">
+<div class="num">7</div>
+<div>
+<div class="titolo">Compilando la scheda si dice se si è un utente o il gestore <span class="chip" style="color:#a05a00;background:#fff4e0">In lavorazione</span></div>
+<div class="meta">issue #172</div>
+<div class="nota">All&#x27;inizio della scheda si sceglie se si risponde come utente o come gestore del locale, e la scheda mostra la veste di chi ha risposto. In prova sulla versione di sviluppo, arriva con la prossima versione di prova.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-8">
+<div class="num">8</div>
+<div>
+<div class="titolo">Ogni risposta con il suo autore, e i disaccordi visibili <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #173</div>
+<div class="nota">Oggi su ogni domanda vale l&#x27;ultima risposta data. Con questo lavoro ogni risposta resta legata a chi l&#x27;ha data e quando, e se due persone dicono cose diverse la scheda le mostra entrambe. Viene prima del lotto AccessiBO.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-9">
+<div class="num">9</div>
+<div>
+<div class="titolo">Misura del gestore ed esperienza dell&#x27;utente affiancate <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #166</div>
+<div class="nota">Sulla stessa domanda la scheda mostra la misura dichiarata dal gestore e l&#x27;esperienza di chi c&#x27;è stato, ognuna con autore e data.</div>
+</div></div>
+</section>
+<section class="area ha-in_coda" id="area-foto">
+<h2>Foto <span class="tag-area"><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">1</span></span></span></h2>
+<div class="voce s-in_coda" id="voce-10">
+<div class="num">10</div>
+<div>
+<div class="titolo">Foto sulla scheda del luogo <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #171</div>
+<div class="nota">Mappando un luogo si aggiungono foto scattate sul posto, che compaiono nella scheda con autore e data. Parte dopo il selettore di chi sta mappando.</div>
+</div></div>
+</section>
+<section class="area ha-fatto ha-in_coda ha-da_decidere" id="area-pagina-gestori-e-questionario">
+<h2>Pagina gestori e questionario <span class="tag-area"><span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto<span class="n">1</span></span><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">2</span></span><span class="chip" style="color:#5b3a8c;background:#f1eafb">Aspetta una tua risposta<span class="n">1</span></span></span></h2>
+<div class="voce s-in_coda" id="voce-11">
+<div class="num">11</div>
+<div>
+<div class="titolo">Le schede della tua pagina gestori entrano nell&#x27;app <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #167</div>
+<div class="nota">Le schede compilate dai gestori sulla tua pagina compaiono nell&#x27;app come mappature del gestore.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-12">
+<div class="num">12</div>
+<div>
+<div class="titolo">Indirizzo confermato dal gestore <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #168</div>
+<div class="nota">Quando il gestore conferma o aggiunge l&#x27;indirizzo sulla tua pagina, il luogo nell&#x27;app si aggiorna. Il solo indirizzo probabile non cambia mai il luogo.</div>
+</div></div>
+<div class="voce s-fatto" id="voce-13">
+<div class="num">13</div>
+<div>
+<div class="titolo">Porta per carrozzina: niente soglia degli 80 cm <span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto</span></div>
+<div class="meta">issue #169</div>
+<details class="dettaglio ripiegata"><summary></summary><div class="nota">Deciso da te il 12 settembre: la tua pagina manda solo la larghezza della porta in centimetri, e il sì o no lo dà chi c&#x27;è stato.</div></details>
+</div></div>
+<div class="voce s-da_decidere" id="voce-14">
+<div class="num">14</div>
+<div>
+<div class="titolo">Scheda versione 2: le nuove domande <span class="chip" style="color:#5b3a8c;background:#f1eafb">Aspetta una tua risposta</span></div>
+<div class="meta">issue #165</div>
+<div class="nota">Ti ho scritto il 6 ottobre con la proposta e i quattro nomi dei campi per la tua pagina. Mi servono due conferme: se &quot;Accessibile con il tuo ausilio?&quot; riguarda l&#x27;ingresso o il locale intero, e se &quot;Che ausilio?&quot; è obbligatoria solo per chi risponde alla prima. Poi pubblico la scheda nuova.</div>
+</div></div>
+</section>
+<section class="area ha-in_coda" id="area-lotto-accessibo">
+<h2>Lotto AccessiBO <span class="tag-area"><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">1</span></span></span></h2>
+<div class="voce s-in_coda" id="voce-15">
+<div class="num">15</div>
+<div>
+<div class="titolo">I 448 luoghi AccessiBO sulla mappa <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #170</div>
+<div class="nota">I luoghi rilevati da AccessiBO compaiono come schede blu attribuite all&#x27;associazione, con la data del rilievo. Parte dopo le risposte tracciate (voce 8), così il rilievo AccessiBO e la scheda del gestore sullo stesso luogo restano distinguibili.</div>
+</div></div>
+</section>
+<section class="area ha-in_coda" id="area-giro-sul-campo">
+<h2>Giro sul campo <span class="tag-area"><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">1</span></span></span></h2>
+<div class="voce s-in_coda" id="voce-16">
+<div class="num">16</div>
+<div>
+<div class="titolo">&quot;I miei luoghi&quot; nel menu <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #174</div>
+<div class="nota">Dal proprio menu si rivedono i luoghi mappati, per correggerli la sera dopo una giornata di rilievi.</div>
+</div></div>
+</section>
+<section class="area ha-in_coda" id="area-vista-a-lista-e-lettori-vocali">
+<h2>Vista a lista e lettori vocali <span class="tag-area"><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">2</span></span></span></h2>
+<div class="voce s-in_coda" id="voce-17">
+<div class="num">17</div>
+<div>
+<div class="titolo">Vista a lista dei luoghi <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #175</div>
+<div class="nota">I luoghi anche come lista ordinata per distanza, in alternativa alla mappa: per chi usa un lettore vocale una mappa di pin è difficile da usare.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-18">
+<div class="num">18</div>
+<div>
+<div class="titolo">Collaudo con TalkBack e VoiceOver <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #176</div>
+<div class="nota">Prova con i lettori vocali di Android e iPhone su tutte le schermate, comprese quelle nuove del mese 2.</div>
+</div></div>
+</section>
+<section class="area ha-in_coda" id="area-mese-3-bozza">
+<h2>Mese 3, bozza <span class="tag-area"><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">7</span></span></span></h2>
+<div class="voce s-in_coda" id="voce-19">
+<div class="num">19</div>
+<div>
+<div class="titolo">Ambassador: verifica delle schede e pin verde <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="nota">Ruolo e badge sul profilo, verifica delle schede con passaggio a verde, inviti con catena di fiducia, nuove regole punti. Per collaudarlo con persone vere servono i nomi dei 5 ambassador iniziali di Bologna.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-20">
+<div class="num">20</div>
+<div>
+<div class="titolo">Coda dei disaccordi <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="nota">L&#x27;elenco dei disaccordi aperti che l&#x27;ambassador scorre e chiude scegliendo il valore giusto. Si appoggia sulle risposte tracciate (voce 8).</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-21">
+<div class="num">21</div>
+<div>
+<div class="titolo">Foto, seconda parte <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="nota">Moderazione delle foto e foto legate alla singola domanda. L&#x27;import delle 705 foto storiche di AccessiBO entra qui se l&#x27;accesso al Drive non arriva in tempo per il mese 2.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-22">
+<div class="num">22</div>
+<div>
+<div class="titolo">Mappe di sfondo con termini adatti al test pubblico <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="nota">La mappa principale usa già il nuovo fornitore. Restano da spostare le mappine dentro le schede di domande e consigli, prima del test pubblico.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-23">
+<div class="num">23</div>
+<div>
+<div class="titolo">Pin di criticità <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="nota">Segnalazioni temporanee legate a un punto della mappa, con un triangolo rosso, scadenza dopo 7 giorni e voti degli altri utenti per confermarle o smentirle.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-24">
+<div class="num">24</div>
+<div>
+<div class="titolo">Chatbot e passaggio della domanda all&#x27;ambassador <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="nota">Un assistente che risponde leggendo le schede dei luoghi, e la domanda passa all&#x27;ambassador se dopo 60 minuti nessuno ha risposto. È la prima candidata a uscire dal mese 3 se il lavoro non ci sta.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-25">
+<div class="num">25</div>
+<div>
+<div class="titolo">Rifinitura verso il lancio <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="nota">Accoglienza dei nuovi utenti, numeri di base sulla mappatura, limiti configurabili, verifica finale di accessibilità e correzioni.</div>
+</div></div>
+</section>
+<h2 id="segnalare">Come segnalare</h2>
+<div class="riquadro segnalare"><p>Per un problema nell&#x27;app scrivimi dove eri, cosa hai fatto e cosa ti aspettavi; lo screenshot solo quando le parole non bastano. Se il problema riguarda una voce di questa pagina, cita il suo numero. Per le voci in &quot;Aspetta una tua risposta&quot; basta rispondere all&#x27;email in cui te l&#x27;ho chiesto.</p></div>
+</main>
+<a href="#" class="su" aria-label="Torna in cima" title="Torna in cima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></a>
+<script>
+for (const r of document.querySelectorAll('input[name="filtro"]')) {
+  r.addEventListener('change', () => {
+    if (!location.hash.startsWith('#voce-')) return;
+    const y = window.scrollY;
+    location.hash = '';
+    window.scrollTo(0, y);
+  });
+}
+// Un'area nascosta dal filtro non si raggiunge: si torna a «Tutte», poi si
+// richiude l'elenco delle aree.
+const aree = document.querySelector('.salta .aree');
+for (const a of aree.querySelectorAll('a')) {
+  a.addEventListener('click', () => {
+    const dest = document.querySelector(a.getAttribute('href'));
+    if (dest && dest.offsetParent === null) document.getElementById('f-tutte').checked = true;
+    aree.open = false;
+  });
+}
+// Un chip «voce N» che porta a una voce fatta la trova ripiegata: la si apre,
+// perché chi l'ha toccato vuole leggerla.
+const apriVoce = () => {
+  if (!location.hash.startsWith('#voce-')) return;
+  const r = document.querySelector(location.hash + ' details.ripiegata');
+  if (r) r.open = true;
+};
+window.addEventListener('hashchange', apriVoce);
+apriVoce();
+// Torna in cima: niente ancora nell'indirizzo, per non toccare :target.
+const su = document.querySelector('.su');
+const aggiornaSu = () => su.classList.toggle('visibile', window.scrollY > 600);
+window.addEventListener('scroll', aggiornaSu, { passive: true });
+aggiornaSu();
+su.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
