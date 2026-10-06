@@ -1,8 +1,5 @@
 AskMapper, stato dei lavori. Aggiornato 6 ottobre 2026. App di prova: 1.2.24 (canali di prova interni: Google Play e App Store).
-25 voci in tutto: Fatto 6 · In lavorazione 1 · In coda 17 · Aspetta una tua risposta 1.
-
-ASPETTA UNA TUA RISPOSTA
-- voce 14: Scheda versione 2: le nuove domande. Ti ho scritto il 6 ottobre con la proposta e i quattro nomi dei campi per la tua pagina. Mi servono due conferme: se "Accessibile con il tuo ausilio?" riguarda l'ingresso o il locale intero, e se "Che ausilio?" è obbligatoria solo per chi risponde alla prima. Poi pubblico la scheda nuova.
+25 voci in tutto: Fatto 6 · In lavorazione 1 · In coda 18.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
@@ -23,6 +20,7 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 
 NOVITÀ, DALLA PIÙ RECENTE
 6 ottobre
+- Scheda versione 2 confermata: la preparo con il testo "Sei riuscito a entrare con il tuo ausilio?". Le risposte sull'ausilio restano testimonianze, fuori dai disaccordi. (voce 14, voce 8)
 - La versione 1.2.24 è sulla Beta: su Android si installa subito dal link, su iPhone appena Apple finisce di esaminarla.
 - Ti ho mandato la proposta della scheda versione 2, con i quattro nomi dei campi per la tua pagina e due conferme da darmi. (voce 14)
 - Il selettore di chi sta mappando è in prova sulla versione di sviluppo. (voce 7)
@@ -45,7 +43,7 @@ RICERCA SULLA MAPPA
 CHI STA MAPPANDO
 (In lavorazione 1 · In coda 2)
 7. Compilando la scheda si dice se si è un utente o il gestore [In lavorazione] issue #172. All'inizio della scheda si sceglie se si risponde come utente o come gestore del locale, e la scheda mostra la veste di chi ha risposto. In prova sulla versione di sviluppo, arriva con la prossima versione di prova.
-8. Ogni risposta con il suo autore, e i disaccordi visibili [In coda] issue #173. Oggi su ogni domanda vale l'ultima risposta data. Con questo lavoro ogni risposta resta legata a chi l'ha data e quando, e se due persone dicono cose diverse la scheda le mostra entrambe. Viene prima del lotto AccessiBO.
+8. Ogni risposta con il suo autore, e i disaccordi visibili [In coda] issue #173. Oggi su ogni domanda vale l'ultima risposta data. Con questo lavoro ogni risposta resta legata a chi l'ha data e quando, e se due persone dicono cose diverse la scheda le mostra entrambe. Le risposte sull'ausilio fanno eccezione, come hai proposto il 6 ottobre: sono testimonianze, si accumulano con chi le ha scritte, con che ausilio e quando, non aprono disaccordi e non scadono. Viene prima del lotto AccessiBO.
 9. Misura del gestore ed esperienza dell'utente affiancate [In coda] issue #166. Sulla stessa domanda la scheda mostra la misura dichiarata dal gestore e l'esperienza di chi c'è stato, ognuna con autore e data.
 
 FOTO
@@ -53,11 +51,11 @@ FOTO
 10. Foto sulla scheda del luogo [In coda] issue #171. Mappando un luogo si aggiungono foto scattate sul posto, che compaiono nella scheda con autore e data. Parte dopo il selettore di chi sta mappando.
 
 PAGINA GESTORI E QUESTIONARIO
-(Fatto 1 · In coda 2 · Aspetta una tua risposta 1)
+(Fatto 1 · In coda 3)
 11. Le schede della tua pagina gestori entrano nell'app [In coda] issue #167. Le schede compilate dai gestori sulla tua pagina compaiono nell'app come mappature del gestore.
 12. Indirizzo confermato dal gestore [In coda] issue #168. Quando il gestore conferma o aggiunge l'indirizzo sulla tua pagina, il luogo nell'app si aggiorna. Il solo indirizzo probabile non cambia mai il luogo.
 13. Porta per carrozzina: niente soglia degli 80 cm [Fatto] issue #169. Deciso da te il 12 settembre: la tua pagina manda solo la larghezza della porta in centimetri, e il sì o no lo dà chi c'è stato.
-14. Scheda versione 2: le nuove domande [Aspetta una tua risposta] issue #165. Ti ho scritto il 6 ottobre con la proposta e i quattro nomi dei campi per la tua pagina. Mi servono due conferme: se "Accessibile con il tuo ausilio?" riguarda l'ingresso o il locale intero, e se "Che ausilio?" è obbligatoria solo per chi risponde alla prima. Poi pubblico la scheda nuova.
+14. Scheda versione 2: le nuove domande [In coda] issue #165. Confermata da te il 6 ottobre. Entrano i quattro campi per la tua pagina (numero di gradini, larghezza della porta, spazio sotto il tavolo, percorso interno) e, nella sezione Ingresso al posto della domanda sulla porta, "Sei riuscito a entrare con il tuo ausilio?", "Che ausilio?" (obbligatoria solo per chi risponde alla prima) e la larghezza dell'ausilio. Ti scrivo quando è pubblicata.
 
 LOTTO ACCESSIBO
 (In coda 1)
