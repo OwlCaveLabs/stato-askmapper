@@ -231,10 +231,10 @@ h2[id], .area[id] { scroll-margin-top: 12px; }
 <span class="passo-voci"><a class="voce-link" href="#voce-7" style="color:#1b7f3b;background:#e6f4ea;border-color:#1b7f3b">voce 7</a></span>
 </li>
 <li class="passo">
-<span class="segno da_fare"></span>
-<span class="passo-titolo">B. Foto sulla scheda del luogo <span class="passo-conteggio">0 di 1 fatte</span></span>
+<span class="segno in_corso"></span>
+<span class="passo-titolo">B. Foto sulla scheda del luogo <span class="passo-conteggio">0 di 2 fatte</span></span>
 <span class="barra piccola"><span class="barra-piena" style="width:0.0%"></span></span>
-<span class="passo-voci"><a class="voce-link" href="#voce-10" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 10</a></span>
+<span class="passo-voci"><a class="voce-link" href="#voce-10" style="color:#a05a00;background:#fff4e0;border-color:#a05a00">voce 10</a><a class="voce-link" href="#voce-26" style="color:#4a4a4a;background:#eeeeee;border-color:#4a4a4a">voce 26</a></span>
 </li>
 <li class="passo">
 <span class="segno da_fare"></span>
@@ -279,7 +279,7 @@ h2[id], .area[id] { scroll-margin-top: 12px; }
 <div class="giorno">5 ottobre</div><ul><li>Nuova versione di prova 1.2.24: &quot;Cerca come indirizzo&quot; resta sempre in vista sotto la lista dei risultati. <a class="voce-link" href="#voce-5" style="color:#1b7f3b;background:#e6f4ea;border-color:#1b7f3b">voce 5</a></li></ul>
 </div>
 <h2 id="voci">Le voci</h2>
-<div class="legenda"><label class="chip tutte filtro" for="f-tutte">Tutte<span class="n">25</span></label><label class="chip filtro" for="f-fatto" style="color:#1b7f3b;background:#e6f4ea">Fatto<span class="n">7</span></label><label class="chip filtro" for="f-in_coda" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">18</span></label></div>
+<div class="legenda"><label class="chip tutte filtro" for="f-tutte">Tutte<span class="n">26</span></label><label class="chip filtro" for="f-fatto" style="color:#1b7f3b;background:#e6f4ea">Fatto<span class="n">7</span></label><label class="chip filtro" for="f-in_lavorazione" style="color:#a05a00;background:#fff4e0">In lavorazione<span class="n">1</span></label><label class="chip filtro" for="f-in_coda" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">18</span></label></div>
 <p class="aiuto-filtro">Tocca un'etichetta qui sopra per vedere solo quelle voci; "Tutte" le rimette in fila.</p>
 <section class="area ha-fatto" id="area-mese-1">
 <h2>Mese 1 <span class="tag-area"><span class="chip" style="color:#1b7f3b;background:#e6f4ea">Fatto<span class="n">1</span></span></span></h2>
@@ -351,14 +351,21 @@ h2[id], .area[id] { scroll-margin-top: 12px; }
 <div class="nota">Sulla stessa domanda la scheda mostra la misura dichiarata dal gestore e l&#x27;esperienza di chi c&#x27;è stato, ognuna con autore e data.</div>
 </div></div>
 </section>
-<section class="area ha-in_coda" id="area-foto">
-<h2>Foto <span class="tag-area"><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">1</span></span></span></h2>
-<div class="voce s-in_coda" id="voce-10">
+<section class="area ha-in_lavorazione ha-in_coda" id="area-foto">
+<h2>Foto <span class="tag-area"><span class="chip" style="color:#a05a00;background:#fff4e0">In lavorazione<span class="n">1</span></span><span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda<span class="n">1</span></span></span></h2>
+<div class="voce s-in_lavorazione" id="voce-10">
 <div class="num">10</div>
 <div>
-<div class="titolo">Foto sulla scheda del luogo <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
-<div class="meta">issue #171</div>
-<div class="nota">Mappando un luogo si aggiungono foto scattate sul posto, che compaiono nella scheda con autore e data. Parte dopo il selettore di chi sta mappando.</div>
+<div class="titolo">Foto sulla scheda del luogo <span class="chip" style="color:#a05a00;background:#fff4e0">In lavorazione</span></div>
+<div class="meta">issue #171, #188</div>
+<div class="nota">Dalla scheda di un luogo si aggiungono foto scattate sul posto o scelte dal telefono, fino a 20 per luogo, ridotte di peso prima dell&#x27;invio. Compaiono in una striscia che si apre a tutto schermo, con descrizione, chi le ha scattate e la data; chi le ha caricate può rimuovere le proprie. La descrizione di ogni foto viene proposta in automatico e chi carica la conferma o la corregge: serve a chi usa un lettore vocale. Due cose da sapere: un piccolo costo di archiviazione che cresce con le foto, e una riga nell&#x27;informativa per le persone riprese, con l&#x27;indirizzo a cui chiedere la rimozione di una foto.</div>
+</div></div>
+<div class="voce s-in_coda" id="voce-26">
+<div class="num">26</div>
+<div>
+<div class="titolo">Foto anche durante la mappatura <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
+<div class="meta">issue #189</div>
+<div class="nota">Un passo &quot;Foto&quot; dentro il questionario, facoltativo, così sul campo si fotografa mentre si compila senza passare dalla scheda. Parte dopo la voce 10.</div>
 </div></div>
 </section>
 <section class="area ha-fatto ha-in_coda" id="area-pagina-gestori-e-questionario">
@@ -447,7 +454,8 @@ h2[id], .area[id] { scroll-margin-top: 12px; }
 <div class="num">21</div>
 <div>
 <div class="titolo">Foto, seconda parte <span class="chip" style="color:#4a4a4a;background:#eeeeee">In coda</span></div>
-<div class="nota">Moderazione delle foto e foto legate alla singola domanda. L&#x27;import delle 705 foto storiche di AccessiBO entra qui se l&#x27;accesso al Drive non arriva in tempo per il mese 2.</div>
+<div class="meta">issue #190</div>
+<div class="nota">Un tasto per segnalare una foto, la moderazione delle foto e le foto legate alla singola domanda. L&#x27;import delle 705 foto storiche di AccessiBO entra qui se l&#x27;accesso al Drive non arriva in tempo per il mese 2.</div>
 </div></div>
 <div class="voce s-in_coda" id="voce-22">
 <div class="num">22</div>

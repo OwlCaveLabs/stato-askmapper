@@ -1,5 +1,5 @@
 AskMapper, stato dei lavori. Aggiornato 7 ottobre 2026. App di prova: 1.2.25 (canali di prova interni: Google Play e App Store).
-25 voci in tutto: Fatto 7 · In coda 18.
+26 voci in tutto: Fatto 7 · In lavorazione 1 · In coda 18.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
@@ -10,7 +10,7 @@ IL PIANO
 I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le voci della bozza del mese 3, da rivedere insieme alla fine del mese 2. Ogni numero è una voce qui sotto, col colore del suo stato.
 [~] A. Ricerca sulla mappa - 4 di 5 fatte - voce 2, voce 3, voce 4, voce 5, voce 6
 [x] C1. Chi sta mappando - 1 di 1 fatte - voce 7
-[ ] B. Foto sulla scheda del luogo - 0 di 1 fatte - voce 10
+[~] B. Foto sulla scheda del luogo - 0 di 2 fatte - voce 10, voce 26
 [ ] C2. Risposte tracciate e disaccordi - 0 di 2 fatte - voce 8, voce 9
 [~] Pagina gestori e questionario - 1 di 4 fatte - voce 11, voce 12, voce 13, voce 14
 [ ] D. Lotto AccessiBO - 0 di 1 fatte - voce 15
@@ -50,8 +50,9 @@ CHI STA MAPPANDO
 9. Misura del gestore ed esperienza dell'utente affiancate [In coda] issue #166. Sulla stessa domanda la scheda mostra la misura dichiarata dal gestore e l'esperienza di chi c'è stato, ognuna con autore e data.
 
 FOTO
-(In coda 1)
-10. Foto sulla scheda del luogo [In coda] issue #171. Mappando un luogo si aggiungono foto scattate sul posto, che compaiono nella scheda con autore e data. Parte dopo il selettore di chi sta mappando.
+(In lavorazione 1 · In coda 1)
+10. Foto sulla scheda del luogo [In lavorazione] issue #171, #188. Dalla scheda di un luogo si aggiungono foto scattate sul posto o scelte dal telefono, fino a 20 per luogo, ridotte di peso prima dell'invio. Compaiono in una striscia che si apre a tutto schermo, con descrizione, chi le ha scattate e la data; chi le ha caricate può rimuovere le proprie. La descrizione di ogni foto viene proposta in automatico e chi carica la conferma o la corregge: serve a chi usa un lettore vocale. Due cose da sapere: un piccolo costo di archiviazione che cresce con le foto, e una riga nell'informativa per le persone riprese, con l'indirizzo a cui chiedere la rimozione di una foto.
+26. Foto anche durante la mappatura [In coda] issue #189. Un passo "Foto" dentro il questionario, facoltativo, così sul campo si fotografa mentre si compila senza passare dalla scheda. Parte dopo la voce 10.
 
 PAGINA GESTORI E QUESTIONARIO
 (Fatto 1 · In coda 3)
@@ -77,7 +78,7 @@ MESE 3, BOZZA
 (In coda 7)
 19. Ambassador: verifica delle schede e pin verde [In coda] Ruolo e badge sul profilo, verifica delle schede con passaggio a verde, inviti con catena di fiducia, nuove regole punti. Per collaudarlo con persone vere servono i nomi dei 5 ambassador iniziali di Bologna.
 20. Coda dei disaccordi [In coda] L'elenco dei disaccordi aperti che l'ambassador scorre e chiude scegliendo il valore giusto. Si appoggia sulle risposte tracciate (voce 8).
-21. Foto, seconda parte [In coda] Moderazione delle foto e foto legate alla singola domanda. L'import delle 705 foto storiche di AccessiBO entra qui se l'accesso al Drive non arriva in tempo per il mese 2.
+21. Foto, seconda parte [In coda] issue #190. Un tasto per segnalare una foto, la moderazione delle foto e le foto legate alla singola domanda. L'import delle 705 foto storiche di AccessiBO entra qui se l'accesso al Drive non arriva in tempo per il mese 2.
 22. Mappe di sfondo con termini adatti al test pubblico [In coda] La mappa principale usa già il nuovo fornitore. Restano da spostare le mappine dentro le schede di domande e consigli, prima del test pubblico.
 23. Pin di criticità [In coda] Segnalazioni temporanee legate a un punto della mappa, con un triangolo rosso, scadenza dopo 7 giorni e voti degli altri utenti per confermarle o smentirle.
 24. Chatbot e passaggio della domanda all'ambassador [In coda] Un assistente che risponde leggendo le schede dei luoghi, e la domanda passa all'ambassador se dopo 60 minuti nessuno ha risposto. È la prima candidata a uscire dal mese 3 se il lavoro non ci sta.
