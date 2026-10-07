@@ -1,5 +1,5 @@
 AskMapper, stato dei lavori. Aggiornato 7 ottobre 2026. App di prova: 1.2.25 (canali di prova interni: Google Play e App Store).
-26 voci in tutto: Fatto 7 · In lavorazione 1 · In coda 18.
+26 voci in tutto: Fatto 8 · In lavorazione 1 · In coda 17.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
@@ -8,7 +8,7 @@ App Store: Prova interna [x] (1.2.25, dal 7 ottobre) -> Beta [~] (1.2.24, dal 7 
 
 IL PIANO
 I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le voci della bozza del mese 3, da rivedere insieme alla fine del mese 2. Ogni numero è una voce qui sotto, col colore del suo stato.
-[~] A. Ricerca sulla mappa - 4 di 5 fatte - voce 2, voce 3, voce 4, voce 5, voce 6
+[x] A. Ricerca sulla mappa - 5 di 5 fatte - voce 2, voce 3, voce 4, voce 5, voce 6
 [x] C1. Chi sta mappando - 1 di 1 fatte - voce 7
 [~] B. Foto sulla scheda del luogo - 0 di 2 fatte - voce 10, voce 26
 [ ] C2. Risposte tracciate e disaccordi - 0 di 2 fatte - voce 8, voce 9
@@ -36,12 +36,12 @@ MESE 1
 1. Mese 1: i luoghi di Bologna sulla mappa e la scheda di accessibilità [Fatto] Quasi 7.900 luoghi di Bologna sulla mappa come pin grigi da mappare, la scheda del luogo, il questionario in tre sezioni e la mappatura a più mani. Prima versione di prova il 21 luglio.
 
 RICERCA SULLA MAPPA
-(Fatto 4 · In coda 1)
+(Fatto 5)
 2. Cercare un luogo o un indirizzo dalla mappa [Fatto] La lente accanto al pulsante principale cerca fra i luoghi per nome e, con "Cerca come indirizzo", per via. Sulle versioni di prova dal 2 settembre (1.2.22).
 3. "Fai una Domanda" e "Segnala o Consiglia": il punto cade sull'indirizzo cercato [Fatto] issue #163. Cercando un indirizzo mentre si crea una domanda o una segnalazione, il punto finiva qualche decina di metri più in basso e lo zoom era sempre lo stesso. Ora il punto cade sull'indirizzo e lo zoom segue il risultato: una via da vicino, una città da lontano. Dalla versione 1.2.23.
 4. Esplora: la mappa si centra sulla via cercata [Fatto] issue #164. Cercando "Via del Pratello" la mappa si fermava sulla via accanto. Ora inquadra tutta la via cercata e la segna con un anello. Dalla versione 1.2.23.
 5. "Cerca come indirizzo" sempre in vista [Fatto] issue #179. Segnalata da te: cercando "Bologna" la riga finiva in fondo a una lunga lista di locali. Ora sta fissa sotto la lista, anche quando i risultati sono tanti. Dalla versione 1.2.24.
-6. La X della ricerca chiude invece di cancellare [In coda] issue #178. Dopo un passaggio da "Fai una Domanda" o "Segnala o Consiglia", riaprendo la ricerca il campo mostra ancora la ricerca di prima, e la X chiude la ricerca invece di cancellarlo. Si aggira toccando di nuovo la lente.
+6. La X della ricerca chiude invece di cancellare [Fatto] issue #178. Non si ripresenta più: rifacendo gli stessi passi, la X cancella il testo se c'è e chiude la ricerca se il campo è vuoto. Cercando la causa ho trovato e corretto un altro difetto, che compariva dopo l'accesso all'app. Arriva con la prossima versione.
 
 CHI STA MAPPANDO
 (Fatto 1 · In coda 2)
