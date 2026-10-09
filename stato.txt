@@ -1,5 +1,5 @@
 AskMapper, stato dei lavori. Aggiornato 9 ottobre 2026. App di prova: 1.2.27 (canali di prova interni: Google Play e App Store).
-26 voci in tutto: Fatto 10 · In coda 16.
+27 voci in tutto: Fatto 10 · In coda 17.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
@@ -16,7 +16,7 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 [ ] D. Lotto AccessiBO - 0 di 1 fatte - voce 15
 [ ] E. Strumenti per il giro sul campo - 0 di 1 fatte - voce 16
 [ ] F. Vista a lista e lettori vocali - 0 di 2 fatte - voce 17, voce 18
-[ ] Mese 3, bozza da rivedere - 0 di 7 fatte - voce 19, voce 20, voce 21, voce 22, voce 23, voce 24, voce 25
+[ ] Mese 3, bozza da rivedere - 0 di 8 fatte - voce 19, voce 20, voce 21, voce 22, voce 23, voce 24, voce 25, voce 27
 
 NOVITÀ, DALLA PIÙ RECENTE
 9 ottobre
@@ -81,7 +81,7 @@ VISTA A LISTA E LETTORI VOCALI
 18. Collaudo con TalkBack e VoiceOver [In coda] issue #176. Prova con i lettori vocali di Android e iPhone su tutte le schermate, comprese quelle nuove del mese 2.
 
 MESE 3, BOZZA
-(In coda 7)
+(In coda 8)
 19. Ambassador: verifica delle schede e pin verde [In coda] Ruolo e badge sul profilo, verifica delle schede con passaggio a verde, inviti con catena di fiducia, nuove regole punti. Per collaudarlo con persone vere servono i nomi dei 5 ambassador iniziali di Bologna.
 20. Coda dei disaccordi [In coda] L'elenco dei disaccordi aperti che l'ambassador scorre e chiude scegliendo il valore giusto. Si appoggia sulle risposte tracciate (voce 8).
 21. Foto, seconda parte [In coda] issue #190. Un tasto per segnalare una foto, la moderazione delle foto e le foto legate alla singola domanda. L'import delle 705 foto storiche di AccessiBO entra qui se l'accesso al Drive non arriva in tempo per il mese 2.
@@ -89,6 +89,7 @@ MESE 3, BOZZA
 23. Pin di criticità [In coda] Segnalazioni temporanee legate a un punto della mappa, con un triangolo rosso, scadenza dopo 7 giorni e voti degli altri utenti per confermarle o smentirle.
 24. Chatbot e passaggio della domanda all'ambassador [In coda] Un assistente che risponde leggendo le schede dei luoghi, e la domanda passa all'ambassador se dopo 60 minuti nessuno ha risposto. È la prima candidata a uscire dal mese 3 se il lavoro non ci sta.
 25. Rifinitura verso il lancio [In coda] Accoglienza dei nuovi utenti, numeri di base sulla mappatura, limiti configurabili, verifica finale di accessibilità e correzioni.
+27. Foto nelle risposte alle domande [In coda] issue #206. Nelle domande e risposte, chi risponde a una domanda può allegare una o più foto, che si vedono nella risposta e si aprono a tutto schermo. Richiesta del 9 ottobre, da rivedere insieme alle altre voci del mese 3.
 
 COME SEGNALARE
 Per un problema nell'app scrivimi dove eri, cosa hai fatto e cosa ti aspettavi; lo screenshot solo quando le parole non bastano. Se il problema riguarda una voce di questa pagina, cita il suo numero. Per le voci in "Aspetta una tua risposta" basta rispondere all'email in cui te l'ho chiesto.
