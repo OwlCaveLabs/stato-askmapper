@@ -1,16 +1,16 @@
-AskMapper, stato dei lavori. Aggiornato 8 ottobre 2026. App di prova: 1.2.26 (canali di prova interni: Google Play e App Store).
-26 voci in tutto: Fatto 9 · In coda 17.
+AskMapper, stato dei lavori. Aggiornato 9 ottobre 2026. App di prova: 1.2.27 (canali di prova interni: Google Play e App Store).
+26 voci in tutto: Fatto 10 · In coda 16.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
-Google Play: Prova interna [x] (1.2.26, dall'8 ottobre) -> Beta [x] (1.2.26, dall'8 ottobre) https://play.google.com/apps/testing/com.owlcavelabs.askmapper -> Sullo store [x] (1.2.11)
-App Store: Prova interna [x] (1.2.26, dall'8 ottobre) -> Beta [~] (1.2.24, dal 7 ottobre) (in revisione: 1.2.26, dall'8 ottobre) https://testflight.apple.com/join/DX47yr3t -> Sullo store [x] (1.2.11)
+Google Play: Prova interna [x] (1.2.27, dal 9 ottobre) -> Beta [x] (1.2.27, dal 9 ottobre) https://play.google.com/apps/testing/com.owlcavelabs.askmapper -> Sullo store [x] (1.2.11)
+App Store: Prova interna [x] (1.2.27, dal 9 ottobre) -> Beta [~] (1.2.26, dal 9 ottobre) (in revisione: 1.2.27, dal 9 ottobre) https://testflight.apple.com/join/DX47yr3t -> Sullo store [x] (1.2.11)
 
 IL PIANO
 I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le voci della bozza del mese 3, da rivedere insieme alla fine del mese 2. Ogni numero è una voce qui sotto, col colore del suo stato.
 [x] A. Ricerca sulla mappa - 5 di 5 fatte - voce 2, voce 3, voce 4, voce 5, voce 6
 [x] C1. Chi sta mappando - 1 di 1 fatte - voce 7
-[~] B. Foto sulla scheda del luogo - 1 di 2 fatte - voce 10, voce 26
+[x] B. Foto sulla scheda del luogo - 2 di 2 fatte - voce 10, voce 26
 [ ] C2. Risposte tracciate e disaccordi - 0 di 2 fatte - voce 8, voce 9
 [~] Pagina gestori e questionario - 1 di 4 fatte - voce 11, voce 12, voce 13, voce 14
 [ ] D. Lotto AccessiBO - 0 di 1 fatte - voce 15
@@ -19,6 +19,9 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 [ ] Mese 3, bozza da rivedere - 0 di 7 fatte - voce 19, voce 20, voce 21, voce 22, voce 23, voce 24, voce 25
 
 NOVITÀ, DALLA PIÙ RECENTE
+9 ottobre
+- La versione 1.2.27 è sulla prova interna e sulla Beta: dentro la scheda c'è il passo "Foto", per fotografare mentre rispondi. Su iPhone la Beta arriva appena Apple finisce di esaminarla. (voce 26)
+
 8 ottobre
 - La versione 1.2.26 è sulla prova interna e sulla Beta: dalla scheda di un luogo si aggiungono le foto, con la descrizione proposta in automatico da confermare o correggere. La X della ricerca ora cancella il testo invece di chiudere. Su iPhone la Beta arriva appena Apple finisce di esaminarla. (voce 10, voce 6)
 
@@ -53,9 +56,9 @@ CHI STA MAPPANDO
 9. Misura del gestore ed esperienza dell'utente affiancate [In coda] issue #166. Sulla stessa domanda la scheda mostra la misura dichiarata dal gestore e l'esperienza di chi c'è stato, ognuna con autore e data.
 
 FOTO
-(Fatto 1 · In coda 1)
+(Fatto 2)
 10. Foto sulla scheda del luogo [Fatto] issue #188. Dalla versione 1.2.26, dalla scheda di un luogo si aggiungono foto scattate sul posto o scelte dal telefono, fino a 20 per luogo, ridotte di peso prima dell'invio. Compaiono in una striscia che si apre a tutto schermo, con descrizione, chi le ha scattate e la data; chi le ha caricate può rimuovere le proprie. La descrizione di ogni foto viene proposta in automatico e chi carica la conferma o la corregge: serve a chi usa un lettore vocale. Due cose da sapere: un piccolo costo di archiviazione che cresce con le foto, e una riga nell'informativa per le persone riprese, con l'indirizzo a cui chiedere la rimozione di una foto.
-26. Foto anche durante la mappatura [In coda] issue #189. Un passo "Foto" dentro il questionario, facoltativo, così sul campo si fotografa mentre si compila senza passare dalla scheda. Parte dopo la voce 10.
+26. Foto anche durante la mappatura [Fatto] issue #189. Dalla versione 1.2.27, dentro la scheda c'è un passo "Foto", facoltativo, subito prima di "Come ci si arriva": sul campo si fotografa mentre si risponde, senza tornare alla scheda del luogo. Le foto si salvano subito sul luogo, anche se poi non invii le risposte; se aggiungi solo foto, "Invia" chiude la scheda senza cambiare le risposte. Le foto portano la scelta fatta all'inizio, utente o gestore, che dopo la prima foto non si cambia più.
 
 PAGINA GESTORI E QUESTIONARIO
 (Fatto 1 · In coda 3)
