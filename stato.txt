@@ -1,5 +1,5 @@
-AskMapper, stato dei lavori. Aggiornato 14 ottobre 2026. App di prova: 1.2.29 (canali di prova interni: Google Play e App Store).
-30 voci in tutto: Fatto 13 · In coda 17.
+AskMapper, stato dei lavori. Aggiornato 17 ottobre 2026. App di prova: 1.2.29 (canali di prova interni: Google Play e App Store).
+31 voci in tutto: Fatto 13 · In coda 18.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
@@ -12,7 +12,7 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 [x] C1. Chi sta mappando - 1 di 1 fatte - voce 7
 [x] B. Foto sulla scheda del luogo - 2 di 2 fatte - voce 10, voce 26
 [x] Prove a Pesaro - 1 di 1 fatte - voce 28
-[ ] C2. Risposte tracciate e disaccordi - 0 di 2 fatte - voce 8, voce 9
+[ ] C2. Risposte tracciate e disaccordi - 0 di 3 fatte - voce 31, voce 8, voce 9
 [~] Pagina gestori e questionario - 3 di 5 fatte - voce 11, voce 12, voce 13, voce 14, voce 30
 [ ] D. Lotto AccessiBO - 0 di 1 fatte - voce 15
 [ ] E. Strumenti per il giro sul campo - 0 di 1 fatte - voce 16
@@ -20,6 +20,9 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 [ ] Mese 3, bozza da rivedere - 0 di 9 fatte - voce 19, voce 20, voce 21, voce 22, voce 23, voce 24, voce 25, voce 27, voce 29
 
 NOVITÀ, DALLA PIÙ RECENTE
+17 ottobre
+- Le tue domande sul bagno sono nella voce 31: la scheda versione 4, con cui comincia il lavoro sulle risposte tracciate (voce 8). Le tre schede di prova della tua pagina passano il controllo con la scheda versione 3. (voce 31)
+
 14 ottobre
 - La versione 1.2.29 è sulla prova interna e sulla Beta, con la scheda versione 3: la risposta "Non utilizzo ausili", la porta girevole e il tasto "Fine" per chiudere la tastiera. Su iPhone la Beta arriva appena Apple finisce di esaminarla. (voce 30)
 - Le tre cose che mi hai scritto provando la 1.2.28 sono nella voce 30: la risposta "Non utilizzo ausili", la porta girevole e il tasto per chiudere la tastiera. Arrivano nella prossima versione, prima delle risposte tracciate (voce 8). (voce 30)
@@ -76,12 +79,13 @@ PROVE A PESARO
 28. I luoghi di Pesaro sulla mappa, per le prove [Fatto] issue #207. Richiesta del 10 ottobre. I luoghi di tutto il comune di Pesaro sono sulla mappa come pin grigi da mappare, così puoi provare l'app sul campo prima di andare a Bologna. Vengono da OpenStreetMap: un locale che lì non è segnato non compare.
 
 PAGINA GESTORI E QUESTIONARIO
-(Fatto 3 · In coda 2)
+(Fatto 3 · In coda 3)
 11. Le schede della tua pagina gestori entrano nell'app [In coda] issue #167. Le schede compilate dai gestori sulla tua pagina compaiono nell'app come mappature del gestore.
 12. Indirizzo confermato dal gestore [In coda] issue #168. Quando il gestore conferma o aggiunge l'indirizzo sulla tua pagina, il luogo nell'app si aggiorna. Il solo indirizzo probabile non cambia mai il luogo.
 13. Porta per carrozzina: niente soglia degli 80 cm [Fatto] issue #169. Deciso da te il 12 settembre: la tua pagina manda solo la larghezza della porta in centimetri, e il sì o no lo dà chi c'è stato.
 14. Scheda versione 2: le nuove domande [Fatto] issue #165. Dalla versione 1.2.28. Nella sezione Ingresso ci sono il numero di gradini (solo con "Più gradini o scale"), la larghezza della porta e, al posto della domanda sulla porta, "Sei riuscito a entrare con il tuo ausilio?", con "Che ausilio?" e la larghezza dell'ausilio per chi risponde. La sezione nuova "Dentro il locale" chiede del percorso interno e dello spazio sotto il tavolo. I quattro campi della tua pagina hanno ora la loro domanda nella scheda.
 30. Scheda versione 3: "Non utilizzo ausili", porta girevole e tastiera [Fatto] issue #215, #214. Dalla versione 1.2.29. "Sei riuscito a entrare con il tuo ausilio?" ha una terza risposta, "Non utilizzo ausili", con cui "Che ausilio?" e la larghezza dell'ausilio non compaiono. "La porta d'ingresso è" ha la quarta risposta "Girevole" (valore girevole in porta_apertura). Quando scrivi un numero o una nota, al posto di Indietro e Avanti compare "Fine", che chiude la tastiera; si chiude anche toccando fuori dal campo.
+31. Scheda versione 4: il bagno [In coda] issue #218. Come hai proposto il 16 ottobre, "Il bagno è utilizzabile in carrozzina?" diventa una testimonianza di chi c'è stato, come la domanda sull'ausilio all'ingresso, ed entrano due domande di fatto: se il bagno è attrezzato, e il piano del bagno con i gradini per arrivarci. È il primo passo delle risposte tracciate (voce 8). Da decidere con te se entrano anche la larghezza della porta del bagno e, per lo spazio esterno, "in piano" o "con gradini" al posto di "accessibile". I nomi dei campi per la tua pagina te li mando prima di pubblicarla.
 
 LOTTO ACCESSIBO
 (In coda 1)
