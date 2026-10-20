@@ -1,5 +1,5 @@
 AskMapper, stato dei lavori. Aggiornato 20 ottobre 2026. App di prova: 1.2.30 (canali di prova interni: Google Play e App Store).
-31 voci in tutto: Fatto 14 · In coda 17.
+31 voci in tutto: Fatto 14 · In lavorazione 1 · In coda 16.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
@@ -21,7 +21,7 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 
 NOVITÀ, DALLA PIÙ RECENTE
 20 ottobre
-- La tua pagina è passata alla scheda versione 4, e la scheda di prova del 19 ottobre passa il controllo. (voce 31)
+- La tua pagina è passata alla scheda versione 4, e la scheda di prova del 19 ottobre passa il controllo. Da oggi lavoro sulle risposte tracciate (voce 8). (voce 31, voce 8)
 
 18 ottobre
 - La versione 1.2.30 è sulla prova interna e sulla Beta, con la scheda versione 4: il bagno e lo spazio esterno. Da oggi la scheda pubblicata è la versione 4. Su iPhone la Beta arriva appena Apple finisce di esaminarla. (voce 31)
@@ -70,9 +70,9 @@ RICERCA SULLA MAPPA
 6. La X della ricerca chiude invece di cancellare [Fatto] issue #178. Non si ripresenta più: rifacendo gli stessi passi, la X cancella il testo se c'è e chiude la ricerca se il campo è vuoto. Cercando la causa ho trovato e corretto un altro difetto, che compariva dopo l'accesso all'app. Dalla versione 1.2.26.
 
 CHI STA MAPPANDO
-(Fatto 1 · In coda 2)
+(Fatto 1 · In lavorazione 1 · In coda 1)
 7. Compilando la scheda si dice se si è un utente o il gestore [Fatto] issue #172. Dalla versione 1.2.25, all'inizio della scheda si sceglie se si risponde come utente o come gestore o dipendente del locale. Le schede compilate dal gestore sono firmate "Mappato dal gestore", senza nome, e il gestore può confermare una scheda già giusta senza cambiare le risposte.
-8. Ogni risposta con il suo autore, e i disaccordi visibili [In coda] issue #173. Oggi su ogni domanda vale l'ultima risposta data. Con questo lavoro ogni risposta resta legata a chi l'ha data e quando, e se due persone dicono cose diverse la scheda le mostra entrambe. Le risposte sull'ausilio fanno eccezione, come hai proposto il 6 ottobre: sono testimonianze, si accumulano con chi le ha scritte, con che ausilio e quando, non aprono disaccordi e non scadono. E quando un gestore reinvia una scheda già compilata senza cambiare le risposte, come hai segnalato il 7 ottobre, la scheda viene firmata "Confermato dal gestore" e la mappatura precedente resta visibile. Viene prima del lotto AccessiBO.
+8. Ogni risposta con il suo autore, e i disaccordi visibili [In lavorazione] issue #173. Oggi su ogni domanda vale l'ultima risposta data. Con questo lavoro ogni risposta resta legata a chi l'ha data e quando, e se due persone dicono cose diverse la scheda le mostra entrambe. Le risposte sull'ausilio fanno eccezione, come hai proposto il 6 ottobre: sono testimonianze, si accumulano con chi le ha scritte, con che ausilio e quando, non aprono disaccordi e non scadono. E quando un gestore reinvia una scheda già compilata senza cambiare le risposte, come hai segnalato il 7 ottobre, la scheda viene firmata "Confermato dal gestore" e la mappatura precedente resta visibile. Viene prima del lotto AccessiBO.
 9. Misura del gestore ed esperienza dell'utente affiancate [In coda] issue #166. Sulla stessa domanda la scheda mostra la misura dichiarata dal gestore e l'esperienza di chi c'è stato, ognuna con autore e data.
 
 FOTO
