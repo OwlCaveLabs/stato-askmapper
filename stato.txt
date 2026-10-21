@@ -1,4 +1,4 @@
-AskMapper, stato dei lavori. Aggiornato 20 ottobre 2026. App di prova: 1.2.30 (canali di prova interni: Google Play e App Store).
+AskMapper, stato dei lavori. Aggiornato 21 ottobre 2026. App di prova: 1.2.30 (canali di prova interni: Google Play e App Store).
 31 voci in tutto: Fatto 14 · In lavorazione 1 · In coda 16.
 
 VERSIONI DI PROVA
@@ -86,7 +86,7 @@ PROVE A PESARO
 
 PAGINA GESTORI E QUESTIONARIO
 (Fatto 4 · In coda 2)
-11. Le schede della tua pagina gestori entrano nell'app [In coda] issue #167. Le schede compilate dai gestori sulla tua pagina compaiono nell'app come mappature del gestore.
+11. Le schede della tua pagina gestori entrano nell'app [In coda] issue #167. Le schede compilate dai gestori sulla tua pagina compaiono nell'app come mappature del gestore. Come hai chiesto il 20 ottobre, una scheda ricompilata aggiorna le risposte del gestore: non tocca quelle degli utenti, non apre disaccordi con la versione di prima, e la versione vecchia resta salvata per poterla ripristinare.
 12. Indirizzo confermato dal gestore [In coda] issue #168. Quando il gestore conferma o aggiunge l'indirizzo sulla tua pagina, il luogo nell'app si aggiorna. Il solo indirizzo probabile non cambia mai il luogo.
 13. Porta per carrozzina: niente soglia degli 80 cm [Fatto] issue #169. Deciso da te il 12 settembre: la tua pagina manda solo la larghezza della porta in centimetri, e il sì o no lo dà chi c'è stato.
 14. Scheda versione 2: le nuove domande [Fatto] issue #165. Dalla versione 1.2.28. Nella sezione Ingresso ci sono il numero di gradini (solo con "Più gradini o scale"), la larghezza della porta e, al posto della domanda sulla porta, "Sei riuscito a entrare con il tuo ausilio?", con "Che ausilio?" e la larghezza dell'ausilio per chi risponde. La sezione nuova "Dentro il locale" chiede del percorso interno e dello spazio sotto il tavolo. I quattro campi della tua pagina hanno ora la loro domanda nella scheda.
