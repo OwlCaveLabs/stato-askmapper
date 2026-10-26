@@ -1,10 +1,10 @@
-AskMapper, stato dei lavori. Aggiornato 21 ottobre 2026. App di prova: 1.2.31 (canali di prova interni: Google Play e App Store).
+AskMapper, stato dei lavori. Aggiornato 26 ottobre 2026. App di prova: 1.2.31 (canali di prova interni: Google Play e App Store).
 32 voci in tutto: Fatto 15 · In lavorazione 1 · In coda 16.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
 Google Play: Prova interna [x] (1.2.31, dal 21 ottobre) -> Beta [x] (1.2.31, dal 21 ottobre) https://play.google.com/apps/testing/com.owlcavelabs.askmapper -> Sullo store [x] (1.2.11)
-App Store: Prova interna [x] (1.2.31, dal 21 ottobre) -> Beta [x] (1.2.30, dal 19 ottobre) (in revisione: 1.2.31, dal 21 ottobre) https://testflight.apple.com/join/DX47yr3t -> Sullo store [x] (1.2.11)
+App Store: Prova interna [x] (1.2.31, dal 21 ottobre) -> Beta [x] (1.2.31, dal 22 ottobre) https://testflight.apple.com/join/DX47yr3t -> Sullo store [x] (1.2.11)
 
 IL PIANO
 I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le voci della bozza del mese 3, da rivedere insieme alla fine del mese 2. Ogni numero è una voce qui sotto, col colore del suo stato.
@@ -20,6 +20,9 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 [ ] Mese 3, bozza da rivedere - 0 di 10 fatte - voce 19, voce 20, voce 21, voce 22, voce 23, voce 24, voce 25, voce 27, voce 29, voce 32
 
 NOVITÀ, DALLA PIÙ RECENTE
+26 ottobre
+- Su iPhone la Beta ha la versione 1.2.31 dal 22 ottobre. Le schede ricompilate sulla tua pagina seguono le due regole che hai approvato il 24 ottobre (voce 11). (voce 11)
+
 21 ottobre
 - La versione 1.2.31 è sulla prova interna e sulla Beta, con le risposte tracciate (voce 8): ogni risposta della scheda ha il suo autore, i disaccordi compaiono con "Da verificare" e una scheda già compilata si conferma con "Conferma le risposte". Su iPhone la Beta arriva appena Apple finisce di esaminarla. Ora passo alla voce 9, la misura del gestore e l'esperienza di chi c'è stato una accanto all'altra. (voce 8, voce 9)
 
@@ -89,7 +92,7 @@ PROVE A PESARO
 
 PAGINA GESTORI E QUESTIONARIO
 (Fatto 4 · In coda 2)
-11. Le schede della tua pagina gestori entrano nell'app [In coda] issue #167. Le schede compilate dai gestori sulla tua pagina compaiono nell'app come mappature del gestore. Come hai chiesto il 20 ottobre, una scheda ricompilata aggiorna le risposte del gestore: non tocca quelle degli utenti, non apre disaccordi con la versione di prima, e la versione vecchia resta salvata per poterla ripristinare.
+11. Le schede della tua pagina gestori entrano nell'app [In coda] issue #167. Le schede compilate dai gestori sulla tua pagina compaiono nell'app come mappature del gestore. Come hai chiesto il 20 ottobre, una scheda ricompilata aggiorna le risposte del gestore: non tocca quelle degli utenti, non apre disaccordi con la versione di prima, e la versione vecchia resta salvata per poterla ripristinare. Come hai approvato il 24 ottobre, una domanda lasciata vuota o con "non lo so" non cancella la risposta di prima, e una scheda della pagina sostituisce solo le schede arrivate dalla pagina, non le risposte che il gestore dà dall'app.
 12. Indirizzo confermato dal gestore [In coda] issue #168. Quando il gestore conferma o aggiunge l'indirizzo sulla tua pagina, il luogo nell'app si aggiorna. Il solo indirizzo probabile non cambia mai il luogo.
 13. Porta per carrozzina: niente soglia degli 80 cm [Fatto] issue #169. Deciso da te il 12 settembre: la tua pagina manda solo la larghezza della porta in centimetri, e il sì o no lo dà chi c'è stato.
 14. Scheda versione 2: le nuove domande [Fatto] issue #165. Dalla versione 1.2.28. Nella sezione Ingresso ci sono il numero di gradini (solo con "Più gradini o scale"), la larghezza della porta e, al posto della domanda sulla porta, "Sei riuscito a entrare con il tuo ausilio?", con "Che ausilio?" e la larghezza dell'ausilio per chi risponde. La sezione nuova "Dentro il locale" chiede del percorso interno e dello spazio sotto il tavolo. I quattro campi della tua pagina hanno ora la loro domanda nella scheda.
