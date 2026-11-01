@@ -1,10 +1,10 @@
-AskMapper, stato dei lavori. Aggiornato 1 novembre 2026. App di prova: 1.2.33 (canali di prova interni: Google Play e App Store).
-34 voci in tutto: Fatto 17 · In lavorazione 1 · In coda 16.
+AskMapper, stato dei lavori. Aggiornato 1 novembre 2026. App di prova: 1.2.34 (canali di prova interni: Google Play e App Store).
+34 voci in tutto: Fatto 18 · In coda 16.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
-Google Play: Prova interna [x] (1.2.33, dal 27 ottobre) -> Beta [x] (1.2.33, dal 28 ottobre) https://play.google.com/apps/testing/com.owlcavelabs.askmapper -> Sullo store [x] (1.2.11)
-App Store: Prova interna [x] (1.2.33, dal 27 ottobre) -> Beta [x] (1.2.33, dal 28 ottobre) https://testflight.apple.com/join/DX47yr3t -> Sullo store [x] (1.2.11)
+Google Play: Prova interna [x] (1.2.34, dal 1 novembre) -> Beta [x] (1.2.34, dal 1 novembre) https://play.google.com/apps/testing/com.owlcavelabs.askmapper -> Sullo store [x] (1.2.11)
+App Store: Prova interna [x] (1.2.34, dal 1 novembre) -> Beta [x] (1.2.33, dal 28 ottobre) (in revisione: 1.2.34, dal 1 novembre) https://testflight.apple.com/join/DX47yr3t -> Sullo store [x] (1.2.11)
 
 IL PIANO
 I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le voci della bozza del mese 3, da rivedere insieme alla fine del mese 2. Ogni numero è una voce qui sotto, col colore del suo stato.
@@ -12,7 +12,7 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 [x] C1. Chi sta mappando - 1 di 1 fatte - voce 7
 [x] B. Foto sulla scheda del luogo - 2 di 2 fatte - voce 10, voce 26
 [x] Prove a Pesaro - 1 di 1 fatte - voce 28
-[~] C2. Risposte tracciate e disaccordi - 4 di 5 fatte - voce 31, voce 8, voce 9, voce 33, voce 34
+[x] C2. Risposte tracciate e disaccordi - 5 di 5 fatte - voce 31, voce 8, voce 9, voce 33, voce 34
 [~] Pagina gestori e questionario - 3 di 5 fatte - voce 11, voce 12, voce 13, voce 14, voce 30
 [ ] D. Lotto AccessiBO - 0 di 1 fatte - voce 15
 [ ] E. Strumenti per il giro sul campo - 0 di 1 fatte - voce 16
@@ -21,6 +21,7 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 
 NOVITÀ, DALLA PIÙ RECENTE
 1 novembre
+- La versione 1.2.34 è sulla prova interna e sulla Beta, con le esperienze dirette in righe brevi (voce 34): ogni esperienza comincia dall'esito, come "Ingresso riuscito" o "Bagno usato con difficoltà", con un segno accanto. Su iPhone la Beta arriva appena Apple finisce di esaminarla: fino ad allora resta la 1.2.33. (voce 34)
 - La versione 1.2.33 è anche sulla Beta di iPhone, dal 28 ottobre. Ho ricevuto il tuo suggerimento sulle esperienze dirette: lo faccio subito, prima delle voci 11 e 12 (voce 34). Ho cancellato i dati di prova che avevi inserito oggi, e il luogo è tornato da mappare. (voce 34)
 
 28 ottobre
@@ -85,12 +86,12 @@ RICERCA SULLA MAPPA
 6. La X della ricerca chiude invece di cancellare [Fatto] issue #178. Non si ripresenta più: rifacendo gli stessi passi, la X cancella il testo se c'è e chiude la ricerca se il campo è vuoto. Cercando la causa ho trovato e corretto un altro difetto, che compariva dopo l'accesso all'app. Dalla versione 1.2.26.
 
 CHI STA MAPPANDO
-(Fatto 4 · In lavorazione 1)
+(Fatto 5)
 7. Compilando la scheda si dice se si è un utente o il gestore [Fatto] issue #172. Dalla versione 1.2.25, all'inizio della scheda si sceglie se si risponde come utente o come gestore o dipendente del locale. Le schede compilate dal gestore sono firmate "Mappato dal gestore", senza nome, e il gestore può confermare una scheda già giusta senza cambiare le risposte.
 8. Ogni risposta con il suo autore, e i disaccordi visibili [Fatto] issue #173. Dalla versione 1.2.31. Ogni risposta della scheda dice chi l'ha data e quando, e se due persone hanno risposto in modo diverso compaiono tutte e due con "Da verificare", mentre sulla mappa il luogo resta blu. In alto la scheda dice chi l'ha mappata per primo, chi l'ha confermata ("Confermato dal gestore" oppure "Confermato da [nome]") e quante risposte sono da verificare. Le risposte date come gestore restano senza nome. Le risposte sull'ausilio sono testimonianze, ognuna con chi l'ha scritta, come hai proposto il 6 ottobre. Chi compila un luogo già mappato trova le risposte già date con il loro autore: se non cambia niente tocca "Conferma le risposte"; se aggiunge solo un'esperienza, una nota o una foto, conferma il resto spuntando "Confermo anche le risposte già presenti". Valgono le quattro regole che hai approvato il 20 ottobre: tra queste, confermare una versione non chiude il disaccordo, che chiuderà l'ambassador con la verifica nel mese 3.
 9. Misura del gestore ed esperienza dell'utente affiancate [Fatto] issue #166. Dalla versione 1.2.32. Le esperienze di chi c'è stato non sono più in fondo alla scheda: stanno nella sezione della loro domanda, sotto il titolo "Esperienze dirette", accanto alle misure. In Ingresso compaiono subito sotto "Quanto è larga la porta d'ingresso?": una per persona, con la risposta, l'ausilio e la sua larghezza, chi l'ha scritta e quando. Nel Bagno c'è chi ha provato il bagno, con il suo ausilio. Oltre tre esperienze, "Mostra tutte" apre le altre. Il posto lo decide l'ordine delle domande della scheda: se in una versione nuova le sposti, le esperienze si spostano con loro.
 33. Conferme e date più chiare sulla scheda [Fatto] issue #228. Dalla versione 1.2.33, le tre correzioni del 26 ottobre. Sotto una risposta confermata da più persone la riga "confermata da 3 persone, l'ultima a dicembre 2026" si tocca: compaiono i nomi di chi ha confermato, dal più recente, ognuno con il suo mese, e il gestore compare come "Il gestore". In alto la firma è una riga sola, "Mappato da Ale.R, ottobre 2026". Nelle risposte "Da verificare" la data porta anche il giorno, "24 ottobre 2026", sulla scheda e quando si compila un luogo, così si capisce chi ha risposto per ultimo; altrove resta il mese.
-34. Esperienze dirette più facili da leggere [In lavorazione] issue #230. Il tuo suggerimento del 1 novembre. Ogni esperienza diventa più corta e l'esito, entrato o no, si riconosce a colpo d'occhio, anche senza distinguere i colori e con il lettore vocale.
+34. Esperienze dirette più facili da leggere [Fatto] issue #230. Dalla versione 1.2.34, il tuo suggerimento del 1 novembre. Ogni esperienza diretta è una riga breve che comincia dall'esito, "Ingresso riuscito", "Ingresso non riuscito" o "Senza ausili", poi l'ausilio e la sua larghezza, se ci sono; sotto, chi l'ha scritta e il mese. Nel Bagno l'esito è "Bagno usato comodamente", "Bagno usato con difficoltà" o "Bagno non usato". Accanto all'esito c'è un segno: verde se è riuscito, ambra se con difficoltà, rosso se non è riuscito. Ogni segno ha anche una forma sua, così si riconosce senza distinguere i colori, e il lettore vocale legge l'esito. Se ne vedono cinque per sezione, le altre con "Mostra tutte". Le esperienze scritte fino al 1 novembre restano con la domanda e la risposta.
 
 FOTO
 (Fatto 2)
