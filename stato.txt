@@ -1,4 +1,4 @@
-AskMapper, stato dei lavori. Aggiornato 2 novembre 2026. App di prova: 1.2.34 (canali di prova interni: Google Play e App Store).
+AskMapper, stato dei lavori. Aggiornato 3 novembre 2026. App di prova: 1.2.34 (canali di prova interni: Google Play e App Store).
 34 voci in tutto: Fatto 20 · In coda 14.
 
 VERSIONI DI PROVA
@@ -20,6 +20,9 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 [ ] Mese 3, bozza da rivedere - 0 di 10 fatte - voce 19, voce 20, voce 21, voce 22, voce 23, voce 24, voce 25, voce 27, voce 29, voce 32
 
 NOVITÀ, DALLA PIÙ RECENTE
+3 novembre
+- Da oggi l'app legge le schede dalla pagina gestori definitiva, askmapper.com/gestori, e non più da quella di staging (voce 11). (voce 11)
+
 2 novembre
 - Le schede della tua pagina gestori entrano nell'app da sole, ogni quarto d'ora, con l'indirizzo confermato dal gestore (voci 11 e 12). Non serve aggiornare l'app. Per ora leggo la pagina di staging: quando decidi l'indirizzo definitivo, la cambio. (voce 11, voce 12)
 
