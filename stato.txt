@@ -1,5 +1,5 @@
 AskMapper, stato dei lavori. Aggiornato 3 novembre 2026. App di prova: 1.2.34 (canali di prova interni: Google Play e App Store).
-34 voci in tutto: Fatto 20 · In coda 14.
+34 voci in tutto: Fatto 20 · In lavorazione 1 · In coda 13.
 
 VERSIONI DI PROVA
 Le versioni dell'app che si possono installare oggi, su Android e su iPhone. "Prova interna" è la versione più recente, riservata ai tester invitati. "Beta" si installa da chiunque abbia il link: tocca la pillola "Beta". Su iPhone la Beta è disponibile appena Apple finisce di esaminarla. "Sullo store" è la versione che scarica chiunque.
@@ -14,7 +14,7 @@ I blocchi del piano del mese 2, nell'ordine in cui li sto facendo, e in fondo le
 [x] Prove a Pesaro - 1 di 1 fatte - voce 28
 [x] C2. Risposte tracciate e disaccordi - 5 di 5 fatte - voce 31, voce 8, voce 9, voce 33, voce 34
 [x] Pagina gestori e questionario - 5 di 5 fatte - voce 11, voce 12, voce 13, voce 14, voce 30
-[ ] D. Lotto AccessiBO - 0 di 1 fatte - voce 15
+[~] D. Lotto AccessiBO - 0 di 1 fatte - voce 15
 [ ] E. Strumenti per il giro sul campo - 0 di 1 fatte - voce 16
 [ ] F. Vista a lista e lettori vocali - 0 di 2 fatte - voce 17, voce 18
 [ ] Mese 3, bozza da rivedere - 0 di 10 fatte - voce 19, voce 20, voce 21, voce 22, voce 23, voce 24, voce 25, voce 27, voce 29, voce 32
@@ -118,8 +118,8 @@ PAGINA GESTORI E QUESTIONARIO
 31. Scheda versione 4: il bagno [Fatto] issue #218. Dalla versione 1.2.30. Come hai proposto il 16 ottobre, "Il bagno è utilizzabile in carrozzina?" diventa una testimonianza di chi c'è stato, "Sei riuscito a usare il bagno con il tuo ausilio?", che vede solo chi è entrato con il suo ausilio. "Hai potuto vedere il bagno?" diventa "C'è un bagno per i clienti?" ed entrano le domande se il bagno è attrezzato, se è sullo stesso piano dell'ingresso e quanto è larga la porta. Lo spazio esterno si descrive come in piano o con gradini. La tua pagina passa a bologna_accessibilita_v4 con i campi che ti ho mandato il 17 ottobre. È il primo passo delle risposte tracciate (voce 8).
 
 LOTTO ACCESSIBO
-(In coda 1)
-15. I 448 luoghi AccessiBO sulla mappa [In coda] issue #170. I luoghi rilevati da AccessiBO compaiono come schede blu attribuite all'associazione, con la data del rilievo. Parte dopo le risposte tracciate (voce 8), così il rilievo AccessiBO e la scheda del gestore sullo stesso luogo restano distinguibili.
+(In lavorazione 1)
+15. I luoghi rilevati da AccessiBO sulla mappa [In lavorazione] issue #170. I locali rilevati da AccessiBO nel 2022 e 2023 compaiono come schede blu firmate dall'associazione, con la data del rilievo. Entrano in due passate: prima quelli che si abbinano con certezza a un luogo dell'app, poi quelli dubbi, dopo un controllo. Nell'app pubblicata solo dopo il consenso dell'associazione.
 
 GIRO SUL CAMPO
 (In coda 1)
